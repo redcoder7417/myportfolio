@@ -5,18 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Harsh Rajvanshi - Full-Stack Developer & AI Specialist. High-performance React, Flask, and AI applications. View projects, experience, and contact info.">
+    content="Harsh Rajvanshi - Software Engineer | Salesforce & CRM Solutions Developer. Specialized in Salesforce, Agentforce, Bitrix24, Document AI, and intelligent enterprise automation.">
   <meta name="keywords"
-    content="Harsh Rajvanshi, Full-Stack Developer, React Developer, Flask, FastAPI, AI Integration, WebSockets, Python, Portfolio">
+    content="Harsh Rajvanshi, Software Engineer, Salesforce Developer, Apex, LWC, Agentforce, Bitrix24, CRM Developer, AI Agents, Document AI, Full-Stack Developer, Python, React, Cloud Science Labs">
   <meta name="author" content="Harsh Rajvanshi">
-  <title>Harsh Rajvanshi | Full-Stack Developer & AI Specialist</title>
+  <title>Harsh Rajvanshi | Software Engineer | Salesforce &amp; CRM Solutions Developer</title>
 
   <!-- OpenGraph Meta Tags for social sharing -->
-  <meta property="og:title" content="Harsh Rajvanshi | Portfolio">
+  <meta property="og:title" content="Harsh Rajvanshi | Software Engineer | Salesforce &amp; CRM Solutions">
   <meta property="og:description"
-    content="Full-Stack Developer & AI Specialist. High-performance web architectures with React, Flask, and AI pipeline integrations.">
-  <meta property="og:image" content="images/resume_analyzer.png">
+    content="Building intelligent applications, enterprise CRM solutions, and AI-powered business automation. Specializing in Salesforce, Agentforce, Bitrix24, and full-stack engineering.">
+  <meta property="og:image" content="images/bespin_document_ai.svg">
   <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,32 +34,59 @@
 
 <body>
 
+  <!-- Retro CRT Noise Grain Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Fluid Magnetic Custom Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="custom-cursor-follower">
+    <span class="cursor-label" id="cursor-label">EXPLORE</span>
+  </div>
+
   <!-- ================================================================
        Header & Navigation
        ================================================================ -->
   <header id="header">
     <div class="nav-container">
-      <a href="#home" class="logo" id="nav-logo">
+      <a href="#home" class="logo magnetic-target" id="nav-logo">
         <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
         <div class="logo-text">Harsh<span>.dev</span></div>
       </a>
 
       <nav>
         <ul class="nav-links" id="nav-links">
-          <li><a href="#home" class="nav-item active">Home</a></li>
-          <li><a href="#about" class="nav-item">About</a></li>
-          <li><a href="#projects" class="nav-item">Projects</a></li>
-          <li><a href="#skills" class="nav-item">Skills</a></li>
-          <li><a href="#experience" class="nav-item">Experience</a></li>
-          <li><a href="#contact" class="nav-item">Contact</a></li>
+          <li><a href="#home" class="nav-item magnetic-target active">Home</a></li>
+          <li><a href="#about" class="nav-item magnetic-target">About</a></li>
+          <li><a href="#featured" class="nav-item magnetic-target">Showcase</a></li>
+          <li><a href="#projects" class="nav-item magnetic-target">Projects</a></li>
+          <li><a href="#skills" class="nav-item magnetic-target">Skills</a></li>
+          <li><a href="#experience" class="nav-item magnetic-target">Experience</a></li>
+          <li><a href="#contact" class="nav-item magnetic-target">Contact</a></li>
         </ul>
       </nav>
 
-      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-actions">
+        <!-- Live HUD Clock Indicator -->
+        <span class="hud-time" id="hud-clock" title="Live Terminal Clock">IST --:--:--</span>
+
+        <!-- Sensory Sound Toggle Button -->
+        <button class="sound-toggle-btn magnetic-target" id="sound-toggle" aria-label="Toggle sensory sound effects"
+          title="Toggle Sensory Audio Micro-FX">
+          <span class="sound-bars" aria-hidden="true">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </span>
+          <span class="sound-label" id="sound-label">FX OFF</span>
+        </button>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -63,38 +97,90 @@
     <div class="hero-grid">
       <div class="hero-content scroll-animate">
         <div class="hero-tagline">
-          <span>Available for Opportunities</span>
+          <span><i class="fa-solid fa-circle-dot" style="color: #10b981; font-size: 0.65rem;"></i> SYSTEM ONLINE // NOIDA, IN</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-title skew-target">
           Hi, I'm Harsh Rajvanshi
-          <span>Full-Stack Developer |</span>
+          <span>Software Engineer |</span>
           <span class="typed-text" id="typed-text"></span>
         </h1>
         <p class="hero-desc">
-          I build scalable web apps, real-time communication systems, and high-performance <span>AI-powered
-            pipelines</span>. Specializing in React.js, FastAPI, and Flask.
+          Building intelligent applications, <span>enterprise CRM solutions</span>, and <span>AI-powered business automation</span>. Specializing in Salesforce, Agentforce, Bitrix24, and full-stack application development.
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          <a href="#featured" class="btn btn-primary magnetic-target">View Showcase <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-secondary magnetic-target">Get In Touch</a>
         </div>
       </div>
 
+      <!-- Interactive 3D WebGL Element -->
       <div class="hero-visual scroll-animate delay-200">
-        <div class="tech-globe">
-          <div class="avatar-container">
-            <div class="avatar-inner">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
+        <div class="hero-webgl-wrapper" id="hero-3d-wrapper">
+          <canvas id="hero-webgl-canvas"></canvas>
+          <div class="webgl-hint">
+            <i class="fa-solid fa-arrows-spin"></i> Drag to spin 3D AI Core
           </div>
-          <div class="orbit-badge badge-react" title="React"><i class="fa-brands fa-react"></i></div>
-          <div class="orbit-badge badge-flask" title="Flask"><i class="fa-solid fa-server"></i></div>
-          <div class="orbit-badge badge-python" title="Python"><i class="fa-brands fa-python"></i></div>
-          <div class="orbit-badge badge-db" title="MongoDB"><i class="fa-solid fa-database"></i></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ================================================================
+       Infinite Marquee Tech Ticker
+       ================================================================ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><i class="fa-brands fa-salesforce"></i> Salesforce CRM</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentforce</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-code"></i> Apex &amp; LWC</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-file-invoice"></i> Document AI</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-diagram-project"></i> Salesforce Flows</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-brain"></i> Google Gemini API</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-python"></i> Python &amp; FastAPI</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-database"></i> MongoDB &amp; Vector DBs</span>
+      <span class="marquee-separator">✦</span>
+      <!-- Duplicate track for seamless infinite loop -->
+      <span class="marquee-item"><i class="fa-brands fa-salesforce"></i> Salesforce CRM</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentforce</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-code"></i> Apex &amp; LWC</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-file-invoice"></i> Document AI</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-diagram-project"></i> Salesforce Flows</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-brain"></i> Google Gemini API</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-brands fa-python"></i> Python &amp; FastAPI</span>
+      <span class="marquee-separator">✦</span>
+      <span class="marquee-item"><i class="fa-solid fa-database"></i> MongoDB &amp; Vector DBs</span>
+      <span class="marquee-separator">✦</span>
+    </div>
+  </div>
 
   <!-- ================================================================
        About Section
@@ -102,36 +188,33 @@
   <section id="about" class="scroll-animate">
     <div class="section-header">
       <span class="section-tag">&lt;About /&gt;</span>
-      <h2 class="section-title">Developer Overview</h2>
+      <h2 class="section-title skew-target">Developer Overview</h2>
     </div>
 
     <div class="about-grid">
       <div class="about-content">
-        <h3>Building reliable software for real problems.</h3>
+        <h3 class="skew-target">Building intelligent applications &amp; enterprise CRM solutions.</h3>
         <div class="about-text">
           <p>
-            I am a <strong>Computer Science graduate</strong> with hands-on experience in building modern, scalable web
-            ecosystems. My passion lies in engineering clean, performance-optimized backend APIs and marrying them with
-            sleek, responsive frontend UIs.
+            I'm a <strong>Software Engineer</strong> with hands-on experience in <strong>Salesforce development</strong>, <strong>CRM engineering</strong>, <strong>AI agent development</strong>, and full-stack application development. I work across the software development lifecycle, from designing application architecture and developing backend services to building CRM automation and integrating AI into real-world business workflows.
           </p>
           <p>
-            From crafting real-time WebSocket communication models to integrating Retrieval-Augmented Generation (RAG)
-            pipelines, I love finding elegant solutions to complex architectural challenges.
+            My current focus is on <strong>Salesforce</strong>, <strong>Agentforce</strong>, <strong>Bitrix24</strong>, and <strong>intelligent automation</strong> — bridging enterprise processes with cutting-edge conversational agents, Document AI, and scalable cloud systems.
           </p>
         </div>
 
         <div class="stats-grid">
-          <div class="stat-card glass-panel">
-            <span class="stat-number gradient-text">5+</span>
-            <span class="stat-label">Production Projects</span>
+          <div class="stat-card glass-panel magnetic-target">
+            <span class="stat-number gradient-text" data-counter="4">4+</span>
+            <span class="stat-label">Enterprise &amp; AI Solutions</span>
           </div>
-          <div class="stat-card glass-panel">
-            <span class="stat-number gradient-text">1</span>
-            <span class="stat-label">Internship Completed</span>
+          <div class="stat-card glass-panel magnetic-target">
+            <span class="stat-number gradient-text" data-counter="3">3</span>
+            <span class="stat-label">Industry Experiences</span>
           </div>
-          <div class="stat-card glass-panel">
-            <span class="stat-number gradient-text">Azure</span>
-            <span class="stat-label">AI Certified</span>
+          <div class="stat-card glass-panel magnetic-target">
+            <span class="stat-number gradient-text">CRM &amp; AI</span>
+            <span class="stat-label">Specialist</span>
           </div>
         </div>
       </div>
@@ -147,8 +230,8 @@
             </div>
             <div class="terminal-title">harsh_rajvanshi.json</div>
             <div class="terminal-actions">
-              <button class="terminal-tab-btn active" data-tab="profile">profile.json</button>
-              <button class="terminal-tab-btn" data-tab="bash">bash</button>
+              <button class="terminal-tab-btn active magnetic-target" data-tab="profile">profile.json</button>
+              <button class="terminal-tab-btn magnetic-target" data-tab="bash">bash</button>
             </div>
           </div>
           <div class="terminal-body" id="terminal-body">
@@ -156,17 +239,15 @@
             <div class="terminal-tab-content active" id="terminal-tab-profile">
               <pre class="terminal-output json"><code>{
   <span class="json-key">"name"</span>: <span class="json-val-str">"Harsh Rajvanshi"</span>,
-  <span class="json-key">"role"</span>: <span class="json-val-str">"Full-Stack &amp; AI Engineer"</span>,
+  <span class="json-key">"role"</span>: <span class="json-val-str">"Software Engineer | Salesforce &amp; CRM Solutions"</span>,
+  <span class="json-key">"location"</span>: <span class="json-val-str">"Noida, Uttar Pradesh, India"</span>,
+  <span class="json-key">"currentFocus"</span>: [
+    <span class="json-val-str">"Salesforce (Apex, LWC, Flows)"</span>,
+    <span class="json-val-str">"Agentforce &amp; Conversational AI"</span>,
+    <span class="json-val-str">"Bitrix24 CRM Architecture &amp; SPAs"</span>,
+    <span class="json-val-str">"Document AI &amp; Enterprise Automation"</span>
+  ],
   <span class="json-key">"education"</span>: <span class="json-val-str">"IMS Engineering College"</span>,
-  <span class="json-key">"strengths"</span>: [
-    <span class="json-val-str">"Full-stack Web Dev"</span>,
-    <span class="json-val-str">"AI &amp; RAG Systems"</span>,
-    <span class="json-val-str">"Real-Time Messaging"</span>,
-    <span class="json-val-str">"REST API Optimization"</span>
-  ],
-  <span class="json-key">"certifications"</span>: [
-    <span class="json-val-str">"Microsoft Azure AI (Honeywell)"</span>
-  ],
   <span class="json-key">"openToWork"</span>: <span class="json-val-bool">true</span>
 }</code></pre>
             </div>
@@ -175,13 +256,13 @@
             <div class="terminal-tab-content" id="terminal-tab-bash">
               <div class="terminal-prompt">guest@harsh:~$ <span>click a command button below:</span></div>
               <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                <button class="btn btn-secondary terminal-cmd-trigger" data-cmd="cat info.txt"
+                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="cat info.txt"
                   style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">cat info.txt</button>
-                <button class="btn btn-secondary terminal-cmd-trigger" data-cmd="npm run dev"
+                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="npm run dev"
                   style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">npm run dev</button>
-                <button class="btn btn-secondary terminal-cmd-trigger" data-cmd="python app.py"
+                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="python app.py"
                   style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">python app.py</button>
-                <button class="btn btn-secondary terminal-cmd-trigger" data-cmd="clear"
+                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="clear"
                   style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">clear</button>
               </div>
               <div class="terminal-prompt" id="bash-prompt-prefix" style="display:none;">guest@harsh:~$ <span
@@ -195,31 +276,331 @@
   </section>
 
   <!-- ================================================================
-       Featured Projects Section
+       Horizontal Pinned Showcase: Featured Enterprise Solutions
+       ================================================================ -->
+  <section id="featured" class="showcase-pinned-wrapper">
+    <div class="showcase-sticky-container">
+      <div class="showcase-header">
+        <div>
+          <span class="section-tag">&lt;Showcase /&gt;</span>
+          <h2 class="section-title skew-target">Featured Enterprise &amp; AI Engineering</h2>
+        </div>
+
+        <div class="showcase-nav-controls">
+          <div class="showcase-progress-indicator">
+            <span class="showcase-counter" id="showcase-counter">01 / 04</span>
+            <div class="showcase-progress-bar-bg">
+              <div class="showcase-progress-bar-fill" id="showcase-progress-fill"></div>
+            </div>
+          </div>
+          <div class="showcase-arrows">
+            <button class="showcase-arrow-btn magnetic-target" id="showcase-prev" aria-label="Previous Project" title="Previous Project">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="showcase-arrow-btn magnetic-target" id="showcase-next" aria-label="Next Project" title="Next Project">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizontal-track-container" id="horizontal-track-container">
+        <div class="horizontal-track" id="featured-track">
+
+        <!-- Showcase 1: Bitrix24 Real Estate CRM -->
+        <div class="horizontal-card-slide">
+          <article class="project-card glass-panel project-card-cyan" data-category="crm">
+            <div class="card-glare"></div>
+            <div class="project-image-wrapper">
+              <img src="images/bitrix_crm.svg" alt="Bitrix24 Real Estate CRM Preview" class="project-img">
+              <div class="project-badge-overlay">
+                <span class="badge badge-cyan"><i class="fa-solid fa-building"></i> Enterprise CRM</span>
+              </div>
+              <div class="project-tech-tabs">
+                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
+                <button class="project-tab-trigger" data-proj-tab="code">Webhook &amp; SPA</button>
+              </div>
+            </div>
+
+            <div class="project-content-container">
+              <div class="project-tab-content active" id="proj-bitrix-desc">
+                <h3 class="project-title">Real Estate CRM - Bitrix24</h3>
+                <div class="project-status-tag">
+                  <i class="fa-solid fa-clock-rotate-left"></i> Data model implemented; automation in progress
+                </div>
+                <div class="project-desc">
+                  <p>A customized real estate CRM solution designed to manage property listings, enquiries, matching workflows, and business operations using Bitrix24.</p>
+                  <ul>
+                    <li>Designed a comprehensive real estate CRM data model with custom entities, relationships, and layouts.</li>
+                    <li>Implemented property listing and enquiry management using Smart Process Automations (SPA).</li>
+                    <li>Developed listing search and matching functionality with custom Node.js and Express services.</li>
+                    <li>Built OAuth and webhook integrations, and explored Gemini-powered AI chatbot integration for automated lead generation.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="badge badge-cyan">Bitrix24</span>
+                  <span class="badge badge-indigo">JavaScript</span>
+                  <span class="badge badge-emerald">Node.js</span>
+                  <span class="badge badge-purple">Express</span>
+                  <span class="badge badge-cyan">REST APIs</span>
+                  <span class="badge badge-indigo">OAuth</span>
+                  <span class="badge badge-purple">Google Gemini</span>
+                </div>
+              </div>
+
+              <div class="project-tab-content" id="proj-bitrix-code">
+                <h3 class="project-title">Listing Matcher Webhook</h3>
+                <pre class="project-snippet"><code>// Bitrix24 Real Estate Webhook & Node.js Integration
+app.post('/api/crm/property-match', async (req, res) => {
+  const { enquiryId, budget, propertyType } = req.body;
+  const listings = await bitrix.call('crm.item.list', {
+    entityTypeId: 1032, // Smart Process: Listings
+    filter: { 
+      '&lt;=PRICE': budget, 
+      '=PROPERTY_TYPE': propertyType, 
+      '=STATUS': 'AVAILABLE' 
+    }
+  });
+  return res.json({ matchedListings: listings });
+});</code></pre>
+                <div class="project-tags">
+                  <span class="badge badge-cyan">Bitrix24 SPA</span>
+                  <span class="badge badge-emerald">Node.js Express</span>
+                  <span class="badge badge-purple">OAuth Webhook</span>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
+                    class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Showcase 2: Bespin Document AI -->
+        <div class="horizontal-card-slide">
+          <article class="project-card glass-panel project-card-indigo" data-category="crm ai">
+            <div class="card-glare"></div>
+            <div class="project-image-wrapper">
+              <img src="images/bespin_document_ai.svg" alt="Bespin Document AI Preview" class="project-img">
+              <div class="project-badge-overlay">
+                <span class="badge badge-indigo"><i class="fa-solid fa-file-invoice"></i> Salesforce / Document AI</span>
+              </div>
+              <div class="project-tech-tabs">
+                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
+                <button class="project-tab-trigger" data-proj-tab="code">Queueable Apex</button>
+              </div>
+            </div>
+
+            <div class="project-content-container">
+              <div class="project-tab-content active" id="proj-bespin-desc">
+                <h3 class="project-title">Bespin - Document AI &amp; Invoice Processing</h3>
+                <div class="project-desc">
+                  <p>An automated Salesforce document processing solution for handling invoice and credit note documents received through email and CRM cases.</p>
+                  <ul>
+                    <li>Implemented Email-to-Case-based document ingestion and automated routing for PDF and CSV files.</li>
+                    <li>Built high-throughput asynchronous processing using Queueable Apex and Batch Apex.</li>
+                    <li>Integrated external document processing services securely via Named Credentials and Apex callouts.</li>
+                    <li>Engineered robust error handling, invoice status tracking, reconciliation, and automated deployment.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="badge badge-indigo">Salesforce</span>
+                  <span class="badge badge-cyan">Apex</span>
+                  <span class="badge badge-purple">Queueable Apex</span>
+                  <span class="badge badge-purple">Batch Apex</span>
+                  <span class="badge badge-emerald">Document AI</span>
+                  <span class="badge badge-cyan">Email-to-Case</span>
+                  <span class="badge badge-indigo">Named Credentials</span>
+                </div>
+              </div>
+
+              <div class="project-tab-content" id="proj-bespin-code">
+                <h3 class="project-title">Async Queueable Processor</h3>
+                <pre class="project-snippet"><code>// Asynchronous Document Ingestion via Queueable Apex
+public class InvoiceDocumentProcessor implements Queueable, Database.AllowsCallouts {
+  private Id caseId;
+  public void execute(QueueableContext context) {
+    HttpRequest req = new HttpRequest();
+    req.setEndpoint('callout:Document_AI_Endpoint/v1/extract');
+    req.setMethod('POST');
+    // Process PDF / CSV & route records
+    HttpResponse res = new Http().send(req);
+    CaseService.updateInvoiceStatus(caseId, res.getBody());
+  }
+}</code></pre>
+                <div class="project-tags">
+                  <span class="badge badge-indigo">Apex Callout</span>
+                  <span class="badge badge-cyan">Named Credentials</span>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
+                    class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Showcase 3: Legend Motors -->
+        <div class="horizontal-card-slide">
+          <article class="project-card glass-panel project-card-emerald" data-category="crm ai">
+            <div class="card-glare"></div>
+            <div class="project-image-wrapper">
+              <img src="images/legend_motors.svg" alt="Legend Motors Agentforce Preview" class="project-img">
+              <div class="project-badge-overlay">
+                <span class="badge badge-emerald"><i class="fa-solid fa-robot"></i> Agentforce / AI Agent</span>
+              </div>
+              <div class="project-tech-tabs">
+                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
+                <button class="project-tab-trigger" data-proj-tab="code">Agent Action</button>
+              </div>
+            </div>
+
+            <div class="project-content-container">
+              <div class="project-tab-content active" id="proj-legend-desc">
+                <h3 class="project-title">Legend Motors - WhatsApp Service Agent</h3>
+                <div class="project-desc">
+                  <p>An AI-powered automotive service agent designed to guide customers through vehicle discovery and test-drive booking.</p>
+                  <ul>
+                    <li>Built conversational customer interaction workflows using Salesforce Agentforce topics and instructions.</li>
+                    <li>Implemented intelligent vehicle discovery, model comparison, and showroom selection.</li>
+                    <li>Configured automated test-drive scheduling, booking confirmations, and human handoff workflows.</li>
+                    <li>Integrated Salesforce automation with WhatsApp-based customer engagement.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="badge badge-emerald">Salesforce Agentforce</span>
+                  <span class="badge badge-cyan">Salesforce Flows</span>
+                  <span class="badge badge-indigo">WhatsApp</span>
+                  <span class="badge badge-purple">CRM</span>
+                  <span class="badge badge-emerald">AI Agents</span>
+                </div>
+              </div>
+
+              <div class="project-tab-content" id="proj-legend-code">
+                <h3 class="project-title">Agentforce Invocable Action</h3>
+                <pre class="project-snippet"><code>// Agentforce Vehicle Discovery & Test-Drive Action
+public with sharing class VehicleBookingAction {
+  @InvocableMethod(label='Schedule Test Drive' description='Books test drive via Agentforce')
+  public static List&lt;BookingResult&gt; scheduleTestDrive(List&lt;BookingRequest&gt; requests) {
+    List&lt;BookingResult&gt; results = new List&lt;BookingResult&gt;();
+    for (BookingRequest req : requests) {
+      Id bookingId = BookingService.createAppointment(req.modelId, req.showroom, req.preferredTime);
+      results.add(new BookingResult(bookingId, 'Confirmed'));
+    }
+    return results;
+  }
+}</code></pre>
+                <div class="project-tags">
+                  <span class="badge badge-emerald">Invocable Method</span>
+                  <span class="badge badge-cyan">Salesforce Flow Action</span>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
+                    class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Showcase 4: Winchy -->
+        <div class="horizontal-card-slide">
+          <article class="project-card glass-panel project-card-purple" data-category="crm ai">
+            <div class="card-glare"></div>
+            <div class="project-image-wrapper">
+              <img src="images/winchy_automation.svg" alt="Winchy Business AI Preview" class="project-img">
+              <div class="project-badge-overlay">
+                <span class="badge badge-purple"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder / AI</span>
+              </div>
+              <div class="project-tech-tabs">
+                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
+                <button class="project-tab-trigger" data-proj-tab="code">Prompt Builder</button>
+              </div>
+            </div>
+
+            <div class="project-content-container">
+              <div class="project-tab-content active" id="proj-winchy-desc">
+                <h3 class="project-title">Winchy - AI-Powered Business Automation</h3>
+                <div class="project-desc">
+                  <p>A collection of Salesforce AI and automation solutions for customer service, employee assistance, inventory operations, and quotation generation.</p>
+                  <ul>
+                    <li>Developed conversational AI-powered employee and customer service agent experiences.</li>
+                    <li>Implemented lead creation and inventory management workflows using Salesforce Flows.</li>
+                    <li>Worked on AI-assisted quotation generation using Salesforce Prompt Builder.</li>
+                    <li>Implemented PDF-based information extraction and automated record updates.</li>
+                  </ul>
+                </div>
+                <div class="project-tags">
+                  <span class="badge badge-indigo">Salesforce</span>
+                  <span class="badge badge-purple">Agentforce</span>
+                  <span class="badge badge-cyan">Apex</span>
+                  <span class="badge badge-emerald">Salesforce Flows</span>
+                  <span class="badge badge-purple">Prompt Builder</span>
+                </div>
+              </div>
+
+              <div class="project-tab-content" id="proj-winchy-code">
+                <h3 class="project-title">Prompt Builder Quotation</h3>
+                <pre class="project-snippet"><code>// Prompt Builder AI Quotation Generation Integration
+public class WinchyQuotationService {
+  public static String generateIntelligentQuotation(Id opportunityId) {
+    ConnectApi.EinsteinPromptTemplateGenerationsInput promptInput = 
+      new ConnectApi.EinsteinPromptTemplateGenerationsInput();
+    promptInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+    return ConnectApi.EinsteinLLM.generateMessages(promptInput).generations[0].text;
+  }
+}</code></pre>
+                <div class="project-tags">
+                  <span class="badge badge-purple">Prompt Builder</span>
+                  <span class="badge badge-indigo">Einstein LLM</span>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
+                    class="fa-brands fa-github"></i> Repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ================================================================
+       Other Notable Projects Section (Interactive Filter Grid)
        ================================================================ -->
   <section id="projects" class="scroll-animate">
     <div class="section-header">
-      <span class="section-tag">&lt;Projects /&gt;</span>
-      <h2 class="section-title">Featured Creations</h2>
+      <span class="section-tag">&lt;Portfolio /&gt;</span>
+      <h2 class="section-title skew-target">Application &amp; Research Portfolio</h2>
     </div>
 
     <!-- Filter Buttons -->
     <div class="project-filters">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="ai">AI / ML</button>
-      <button class="filter-btn" data-filter="real-time">Real-Time</button>
-      <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+      <button class="filter-btn magnetic-target active" data-filter="all">All Projects</button>
+      <button class="filter-btn magnetic-target" data-filter="crm">Salesforce &amp; CRM</button>
+      <button class="filter-btn magnetic-target" data-filter="ai">AI &amp; Automation</button>
+      <button class="filter-btn magnetic-target" data-filter="web">Full-Stack Web</button>
     </div>
 
     <!-- Grid of Projects -->
     <div class="projects-grid">
 
-      <!-- Project 1: AI Resume Analyzer -->
-      <article class="project-card glass-panel project-card-emerald" data-category="ai">
+      <!-- Project 5: AI Resume Analyzer -->
+      <article class="project-card glass-panel project-card-emerald" data-category="ai web">
+        <div class="card-glare"></div>
         <div class="project-image-wrapper">
           <img src="images/resume_analyzer.png" alt="AI Resume Analyzer Preview" class="project-img">
           <div class="project-badge-overlay">
-            <span class="badge badge-emerald"><i class="fa-solid fa-wand-magic-sparkles"></i> AI System</span>
+            <span class="badge badge-emerald"><i class="fa-solid fa-brain"></i> AI / Full-Stack</span>
           </div>
           <div class="project-tech-tabs">
             <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
@@ -228,14 +609,12 @@
         </div>
 
         <div class="project-content-container">
-          <!-- Overview Tab -->
           <div class="project-tab-content active" id="proj-resume-desc">
             <h3 class="project-title">AI Resume Analyzer</h3>
             <div class="project-desc">
-              <p>An intelligent, high-speed candidate analysis engine that leverages OpenAI APIs and vector databases to
-                match resumes against complex job criteria.</p>
+              <p>An AI-powered platform for analyzing resumes and extracting meaningful insights using LLM-based processing.</p>
               <ul>
-                <li>Integrated RAG pipelines for semantic data retrieval.</li>
+                <li>Integrated RAG pipelines for semantic data retrieval against job criteria.</li>
                 <li>Generates automated compatibility ratings and skills gap analysis.</li>
                 <li>Implemented using FastAPI to handle high concurrency.</li>
               </ul>
@@ -243,29 +622,22 @@
             <div class="project-tags">
               <span class="badge badge-indigo">Python</span>
               <span class="badge badge-cyan">FastAPI</span>
-              <span class="badge badge-emerald">OpenAI APIs</span>
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-indigo">MongoDB</span>
+              <span class="badge badge-emerald">OpenAI API</span>
               <span class="badge badge-purple">RAG</span>
+              <span class="badge badge-emerald">Pinecone</span>
             </div>
           </div>
 
-          <!-- Code / Architecture Tab -->
           <div class="project-tab-content" id="proj-resume-code">
-            <h3 class="project-title">Implementation Snippet</h3>
+            <h3 class="project-title">RAG Retrieval Pipeline</h3>
             <pre class="project-snippet"><code># RAG Retrieval & Prompt Formulation
 async def analyze_candidate(resume_text, job_desc):
     vector_store = PineconeStore()
-    docs = await vector_store.similarity_search(
-        query=job_desc, 
-        k=3
-    )
+    docs = await vector_store.similarity_search(query=job_desc, k=3)
     context = "\n".join([d.text for d in docs])
-    
-    prompt = f"""
-    Compare resume with job description under context:
-    {context}
-    Resume: {resume_text}
-    Job: {job_desc}
-    """
+    prompt = f"Compare resume with job:\n{context}\nResume: {resume_text}"
     return await llm.generate(prompt)</code></pre>
             <div class="project-tags">
               <span class="badge badge-emerald">Vector Database</span>
@@ -274,14 +646,15 @@ async def analyze_candidate(resume_text, job_desc):
           </div>
 
           <div class="project-links">
-            <a href="https://github.com/redcoder7417/ai-resume-analyzer" target="_blank" rel="noopener" class="project-link-btn"><i
+            <a href="https://github.com/redcoder7417/ai-resume-analyzer" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
                 class="fa-brands fa-github"></i> Repository</a>
           </div>
         </div>
       </article>
 
-      <!-- Project 2: Real-Time Chat Application -->
-      <article class="project-card glass-panel project-card-cyan" data-category="real-time">
+      <!-- Project 6: Real-Time Chat Application -->
+      <article class="project-card glass-panel project-card-cyan" data-category="web">
+        <div class="card-glare"></div>
         <div class="project-image-wrapper">
           <img src="images/chat_app.png" alt="Real-Time Chat App Preview" class="project-img">
           <div class="project-badge-overlay">
@@ -294,12 +667,10 @@ async def analyze_candidate(resume_text, job_desc):
         </div>
 
         <div class="project-content-container">
-          <!-- Overview Tab -->
           <div class="project-tab-content active" id="proj-chat-desc">
-            <h3 class="project-title">Real-Time Chat App</h3>
+            <h3 class="project-title">Real-Time Chat Application</h3>
             <div class="project-desc">
-              <p>A secure, responsive messaging hub that powers instant conversations and group chats via persistent
-                socket connections.</p>
+              <p>A real-time messaging application with authenticated users and WebSocket-based communication.</p>
               <ul>
                 <li>Engineered with React hooks and event-driven Socket.io links.</li>
                 <li>Utilizes JSON Web Tokens (JWT) for secure authentication.</li>
@@ -311,10 +682,11 @@ async def analyze_candidate(resume_text, job_desc):
               <span class="badge badge-cyan">React</span>
               <span class="badge badge-indigo">MongoDB</span>
               <span class="badge badge-purple">WebSockets</span>
+              <span class="badge badge-cyan">Socket.io</span>
+              <span class="badge badge-indigo">JWT</span>
             </div>
           </div>
 
-          <!-- Code / Architecture Tab -->
           <div class="project-tab-content" id="proj-chat-code">
             <h3 class="project-title">WebSocket Listener</h3>
             <pre class="project-snippet"><code># Socket.io message controller
@@ -322,12 +694,7 @@ async def analyze_candidate(resume_text, job_desc):
 @jwt_required_socket()
 def handle_message(data):
     sender = get_jwt_identity()
-    new_message = {
-        'sender': sender,
-        'room': data['room_id'],
-        'text': data['message'],
-        'timestamp': datetime.utcnow()
-    }
+    new_message = {'sender': sender, 'room': data['room_id'], 'text': data['message']}
     db.messages.insert_one(new_message)
     emit('receive_message', new_message, room=data['room_id'])</code></pre>
             <div class="project-tags">
@@ -337,80 +704,15 @@ def handle_message(data):
           </div>
 
           <div class="project-links">
-            <a href="https://github.com/redcoder7417/-Real-Time-Chat-Application" target="_blank" rel="noopener" class="project-link-btn"><i
+            <a href="https://github.com/redcoder7417/-Real-Time-Chat-Application" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
                 class="fa-brands fa-github"></i> Repository</a>
-         <!--   <a href="https://demo.com" target="_blank" rel="noopener" class="project-link-btn">
-              <i  <!-- class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a> -->
           </div>
         </div>
       </article>
 
-      <!-- Project 3: HealthRack -->
-      <article class="project-card glass-panel project-card-indigo" data-category="web">
-        <div class="project-image-wrapper">
-          <img src="images/healthrack.png" alt="HealthRack App Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-indigo"><i class="fa-solid fa-heart-pulse"></i> Full-Stack</span>
-          </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">Recommendation Logic</button>
-          </div>
-        </div>
-
-        <div class="project-content-container">
-          <!-- Overview Tab -->
-          <div class="project-tab-content active" id="proj-health-desc">
-            <h3 class="project-title">HealthRack</h3>
-            <div class="project-desc">
-              <p>A comprehensive workout planner and fitness portal featuring specialized exercise suggestions and user
-                authorization workflows.</p>
-              <ul>
-                <li>Customized recommendation algorithm adjusting to fitness levels.</li>
-                <li>Google OAuth integration for seamless, secure user sign-ups.</li>
-                <li>Highly optimized MongoDB query profiles for workout logs.</li>
-              </ul>
-            </div>
-            <div class="project-tags">
-              <span class="badge badge-cyan">Flask</span>
-              <span class="badge badge-cyan">React</span>
-              <span class="badge badge-indigo">MongoDB</span>
-              <span class="badge badge-purple">Google OAuth</span>
-            </div>
-          </div>
-
-          <!-- Code / Architecture Tab -->
-          <div class="project-tab-content" id="proj-health-code">
-            <h3 class="project-title">OAuth & Recommendation API</h3>
-            <pre class="project-snippet"><code># Google Auth Callback validation
-@auth.route('/callback')
-def auth_callback():
-    token = oauth.google.authorize_access_token()
-    user_info = oauth.google.userinfo()
-    
-    # Custom Fitness recommendation query
-    rec = db.workouts.aggregate([
-        {'$match': {'level': user_info['pref_level']}},
-        {'$sample': {'size': 5}}
-    ])
-    return jsonify(workouts=list(rec))</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-indigo">Aggregation Pipeline</span>
-              <span class="badge badge-purple">OAuth OAuth2</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn"><i
-                class="fa-brands fa-github"></i> Repository</a>
-            <!--<a href="https://demo.com" target="_blank" rel="noopener" class="project-link-btn">
-               <i  <!-- class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>  -->
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4: Doctor Recommendation Chatbot -->
-      <article class="project-card glass-panel project-card-purple" data-category="ai">
+      <!-- Project 7: Doctor Recommendation Chatbot -->
+      <article class="project-card glass-panel project-card-purple" data-category="ai web">
+        <div class="card-glare"></div>
         <div class="project-image-wrapper">
           <img src="images/healthcare_assistant.png" alt="Doctor Recommendation Chatbot Preview" class="project-img">
           <div class="project-badge-overlay">
@@ -423,11 +725,10 @@ def auth_callback():
         </div>
 
         <div class="project-content-container">
-          <!-- Overview Tab -->
           <div class="project-tab-content active" id="proj-health-assist-desc">
             <h3 class="project-title">Doctor Recommendation Chatbot</h3>
             <div class="project-desc">
-              <p>An AI chatbot that analyzes patient symptoms, predicts preliminary health conditions, and suggests medical specialists using LLM prompting and database integration.</p>
+              <p>An AI-powered chatbot designed to assist users with doctor recommendations through conversational interaction.</p>
               <ul>
                 <li>Engineered an AI agent using the SambaNova LLM API.</li>
                 <li>Integrated MongoDB Atlas for storing doctor profiles.</li>
@@ -442,24 +743,17 @@ def auth_callback():
             </div>
           </div>
 
-          <!-- Code / Architecture Tab -->
           <div class="project-tab-content" id="proj-health-assist-code">
             <h3 class="project-title">Health Chatbot Endpoint</h3>
             <pre class="project-snippet"><code># Symptom-based health chatbot agent
 @app.route('/api/chat', methods=['POST'])
 @limiter.limit("10 per minute")
 def health_agent():
-    user_message = request.json.get('message')
-    symptoms = extract_symptoms(user_message)
-    
-    # Query LLM for preliminary symptom analysis
+    symptoms = extract_symptoms(request.json.get('message'))
     prompt = f"Analyze symptoms: {symptoms}. Provide non-diagnostic guidance."
     response = llm.generate_response(prompt)
-    
-    # Recommend doctor specialization based on symptoms
     specialty = predict_specialty(symptoms)
     doctors = db.doctors.find({"specialty": specialty}).limit(3)
-    
     return jsonify(guidance=response, recommendations=list(doctors))</code></pre>
             <div class="project-tags">
               <span class="badge badge-indigo">Flask Routing</span>
@@ -468,14 +762,73 @@ def health_agent():
           </div>
 
           <div class="project-links">
-            <a href="https://github.com/redcoder7417/DR_Recomendation_system_chatbot" target="_blank" rel="noopener" class="project-link-btn"><i
+            <a href="https://github.com/redcoder7417/DR_Recomendation_system_chatbot" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
                 class="fa-brands fa-github"></i> Repository</a>
           </div>
         </div>
       </article>
 
-      <!-- Project 5: Patient Portal Assignment -->
+      <!-- Project 8: HealthRack -->
+      <article class="project-card glass-panel project-card-indigo" data-category="web">
+        <div class="card-glare"></div>
+        <div class="project-image-wrapper">
+          <img src="images/healthrack.png" alt="HealthRack App Preview" class="project-img">
+          <div class="project-badge-overlay">
+            <span class="badge badge-indigo"><i class="fa-solid fa-heart-pulse"></i> Full-Stack</span>
+          </div>
+          <div class="project-tech-tabs">
+            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
+            <button class="project-tab-trigger" data-proj-tab="code">Recommendation Logic</button>
+          </div>
+        </div>
+
+        <div class="project-content-container">
+          <div class="project-tab-content active" id="proj-health-desc">
+            <h3 class="project-title">HealthRack</h3>
+            <div class="project-desc">
+              <p>A healthcare management platform with structured workflows, authentication, and backend integration.</p>
+              <ul>
+                <li>Customized recommendation algorithm adjusting to fitness levels.</li>
+                <li>Google OAuth integration for seamless, secure user sign-ups.</li>
+                <li>Highly optimized MongoDB query profiles for workout logs.</li>
+              </ul>
+            </div>
+            <div class="project-tags">
+              <span class="badge badge-cyan">Flask</span>
+              <span class="badge badge-cyan">React</span>
+              <span class="badge badge-indigo">MongoDB</span>
+              <span class="badge badge-purple">Google OAuth</span>
+            </div>
+          </div>
+
+          <div class="project-tab-content" id="proj-health-code">
+            <h3 class="project-title">OAuth &amp; Recommendation API</h3>
+            <pre class="project-snippet"><code># Google Auth Callback validation
+@auth.route('/callback')
+def auth_callback():
+    token = oauth.google.authorize_access_token()
+    user_info = oauth.google.userinfo()
+    rec = db.workouts.aggregate([
+        {'$match': {'level': user_info['pref_level']}},
+        {'$sample': {'size': 5}}
+    ])
+    return jsonify(workouts=list(rec))</code></pre>
+            <div class="project-tags">
+              <span class="badge badge-indigo">Aggregation Pipeline</span>
+              <span class="badge badge-purple">OAuth 2.0</span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
+                class="fa-brands fa-github"></i> Repository</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 9: Patient Portal -->
       <article class="project-card glass-panel project-card-rose" data-category="web">
+        <div class="card-glare"></div>
         <div class="project-image-wrapper">
           <img src="images/patient_portal.png" alt="Patient Portal Assignment Preview" class="project-img">
           <div class="project-badge-overlay">
@@ -488,11 +841,10 @@ def health_agent():
         </div>
 
         <div class="project-content-container">
-          <!-- Overview Tab -->
           <div class="project-tab-content active" id="proj-patient-portal-desc">
-            <h3 class="project-title">Patient Portal </h3>
+            <h3 class="project-title">Patient Portal</h3>
             <div class="project-desc">
-              <p>A full-stack patient medical portal for managing appointments, recording health statistics, and securely viewing patient diagnostic history.</p>
+              <p>A web-based patient portal developed using a modern React and Node.js stack for appointments and diagnostics.</p>
               <ul>
                 <li>Implemented secure patient and doctor authentication workflows.</li>
                 <li>Created dynamic dashboards for medical records and booking management.</li>
@@ -507,7 +859,6 @@ def health_agent():
             </div>
           </div>
 
-          <!-- Code / Architecture Tab -->
           <div class="project-tab-content" id="proj-patient-portal-code">
             <h3 class="project-title">Portal API Endpoint</h3>
             <pre class="project-snippet"><code>// Patient medical records retrieval API
@@ -518,7 +869,6 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
       .find({ patientId: ObjectId(patientId) })
       .sort({ date: -1 })
       .toArray();
-      
     res.json({ success: true, records });
   } catch (error) {
     res.status(500).json({ error: 'Failed to retrieve records' });
@@ -531,7 +881,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
 
           <div class="project-links">
-            <a href="https://github.com/redcoder7417/Patient-portal-assiment" target="_blank" rel="noopener" class="project-link-btn"><i
+            <a href="https://github.com/redcoder7417/Patient-portal-assiment" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
                 class="fa-brands fa-github"></i> Repository</a>
           </div>
         </div>
@@ -546,27 +896,18 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
   <section id="skills" class="scroll-animate">
     <div class="section-header">
       <span class="section-tag">&lt;Skills /&gt;</span>
-      <h2 class="section-title">Technical Matrix</h2>
+      <h2 class="section-title skew-target">Technical Expertise Matrix</h2>
     </div>
 
     <div class="skills-container">
 
-      <!-- Frontend Skills -->
+      <!-- 1. Salesforce Skills -->
       <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-brands fa-react"></i> Frontend Development</h3>
+        <h3 class="skill-category-title"><i class="fa-brands fa-salesforce"></i> Salesforce Development</h3>
         <div class="skills-list">
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">React.js &amp; Hooks</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">JavaScript (ES6+) &amp; HTML/CSS</span>
+              <span class="skill-name">Apex &amp; Async Processing (Queueable/Batch)</span>
               <span class="skill-pct">95%</span>
             </div>
             <div class="skill-bar-bg">
@@ -575,32 +916,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">Responsive &amp; Mobile-First Design</span>
-              <span class="skill-pct">88%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="88%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Backend Skills -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> Backend Engineering</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Flask &amp; FastAPI (Python)</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">REST API Design &amp; Optimization</span>
+              <span class="skill-name">Lightning Web Components (LWC)</span>
               <span class="skill-pct">90%</span>
             </div>
             <div class="skill-bar-bg">
@@ -609,53 +925,252 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">AI Integration &amp; LLM RAG Pipelines</span>
-              <span class="skill-pct">85%</span>
+              <span class="skill-name">Salesforce Flows &amp; Platform Automation</span>
+              <span class="skill-pct">92%</span>
             </div>
             <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="85%"></div>
+              <div class="skill-bar-fill" data-percentage="92%"></div>
             </div>
           </div>
         </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">Salesforce CRM</span>
+          <span class="skill-tag-pill magnetic-target">Apex</span>
+          <span class="skill-tag-pill magnetic-target">LWC</span>
+          <span class="skill-tag-pill magnetic-target">Salesforce Flows</span>
+          <span class="skill-tag-pill magnetic-target">Agentforce</span>
+          <span class="skill-tag-pill magnetic-target">Prompt Builder</span>
+          <span class="skill-tag-pill magnetic-target">Document AI</span>
+          <span class="skill-tag-pill magnetic-target">Queueable Apex</span>
+          <span class="skill-tag-pill magnetic-target">Batch Apex</span>
+          <span class="skill-tag-pill magnetic-target">Email-to-Case</span>
+          <span class="skill-tag-pill magnetic-target">Omni-Channel</span>
+          <span class="skill-tag-pill magnetic-target">Reports &amp; Dashboards</span>
+          <span class="skill-tag-pill magnetic-target">Lightning App Builder</span>
+          <span class="skill-tag-pill magnetic-target">Gearset</span>
+        </div>
       </div>
 
-      <!-- Database Skills -->
+      <!-- 2. CRM Engineering -->
       <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> Database Management</h3>
+        <h3 class="skill-category-title"><i class="fa-solid fa-network-wired"></i> CRM Architecture &amp; Automation</h3>
         <div class="skills-list">
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">MongoDB (NoSQL)</span>
-              <span class="skill-pct">85%</span>
+              <span class="skill-name">Bitrix24 CRM Architecture &amp; Entities</span>
+              <span class="skill-pct">92%</span>
             </div>
             <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="85%"></div>
+              <div class="skill-bar-fill" data-percentage="92%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">SQL Databases</span>
+              <span class="skill-name">Smart Process Automation (SPA) &amp; Pipelines</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">CRM Webhooks, OAuth &amp; WhatsApp Integration</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="88%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">Bitrix24</span>
+          <span class="skill-tag-pill magnetic-target">CRM Architecture</span>
+          <span class="skill-tag-pill magnetic-target">Smart Process Automation</span>
+          <span class="skill-tag-pill magnetic-target">CRM Customization</span>
+          <span class="skill-tag-pill magnetic-target">Business Process Automation</span>
+          <span class="skill-tag-pill magnetic-target">CRM Pipelines</span>
+          <span class="skill-tag-pill magnetic-target">Lead Management</span>
+          <span class="skill-tag-pill magnetic-target">Webhooks</span>
+          <span class="skill-tag-pill magnetic-target">OAuth 2.0</span>
+          <span class="skill-tag-pill magnetic-target">WhatsApp Integration</span>
+        </div>
+      </div>
+
+      <!-- 3. AI & Intelligent Systems -->
+      <div class="skill-category glass-panel">
+        <h3 class="skill-category-title"><i class="fa-solid fa-robot"></i> AI &amp; Intelligent Agents</h3>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Salesforce Agentforce &amp; Conversational AI</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">LLM Integration &amp; Google Gemini API</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">RAG Pipelines &amp; Vector Databases</span>
+              <span class="skill-pct">86%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="86%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">Agentforce</span>
+          <span class="skill-tag-pill magnetic-target">AI Agents</span>
+          <span class="skill-tag-pill magnetic-target">Google Gemini API</span>
+          <span class="skill-tag-pill magnetic-target">OpenAI API</span>
+          <span class="skill-tag-pill magnetic-target">LLM Integration</span>
+          <span class="skill-tag-pill magnetic-target">RAG</span>
+          <span class="skill-tag-pill magnetic-target">Vector Search</span>
+          <span class="skill-tag-pill magnetic-target">Pinecone</span>
+          <span class="skill-tag-pill magnetic-target">ChromaDB</span>
+          <span class="skill-tag-pill magnetic-target">SambaNova API</span>
+        </div>
+      </div>
+
+      <!-- 4. Frontend Skills -->
+      <div class="skill-category glass-panel">
+        <h3 class="skill-category-title"><i class="fa-brands fa-react"></i> Frontend Engineering</h3>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">React.js &amp; Modern Hooks</span>
+              <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">JavaScript (ES6+) &amp; HTML5/CSS3</span>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Responsive Design &amp; UI Architecture</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">React.js</span>
+          <span class="skill-tag-pill magnetic-target">JavaScript ES6+</span>
+          <span class="skill-tag-pill magnetic-target">HTML5</span>
+          <span class="skill-tag-pill magnetic-target">CSS3</span>
+          <span class="skill-tag-pill magnetic-target">Responsive Design</span>
+          <span class="skill-tag-pill magnetic-target">React Native</span>
+        </div>
+      </div>
+
+      <!-- 5. Backend Skills -->
+      <div class="skill-category glass-panel">
+        <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> Backend &amp; APIs</h3>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Python (Flask &amp; FastAPI)</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Node.js &amp; Express.js</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">RESTful APIs &amp; WebSockets</span>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">Python</span>
+          <span class="skill-tag-pill magnetic-target">Flask</span>
+          <span class="skill-tag-pill magnetic-target">FastAPI</span>
+          <span class="skill-tag-pill magnetic-target">Node.js</span>
+          <span class="skill-tag-pill magnetic-target">Express.js</span>
+          <span class="skill-tag-pill magnetic-target">REST APIs</span>
+          <span class="skill-tag-pill magnetic-target">WebSockets</span>
+        </div>
+      </div>
+
+      <!-- 6. Database Skills -->
+      <div class="skill-category glass-panel">
+        <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> Databases &amp; Storage</h3>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">MongoDB &amp; MongoDB Atlas</span>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="88%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">SQL Databases &amp; Queries</span>
+              <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-percentage="82%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">Vector Stores (Pinecone)</span>
               <span class="skill-pct">80%</span>
             </div>
             <div class="skill-bar-bg">
               <div class="skill-bar-fill" data-percentage="80%"></div>
             </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Vector Databases (Pinecone/Chroma)</span>
-              <span class="skill-pct">75%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="75%"></div>
-            </div>
-          </div>
+        </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">MongoDB</span>
+          <span class="skill-tag-pill magnetic-target">MongoDB Atlas</span>
+          <span class="skill-tag-pill magnetic-target">SQL</span>
+          <span class="skill-tag-pill magnetic-target">Pinecone</span>
         </div>
       </div>
 
-      <!-- Tools & Protocols -->
+      <!-- 7. Tools & Ecosystem -->
       <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Infrastructure &amp; Tools</h3>
+        <h3 class="skill-category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Ecosystem</h3>
         <div class="skills-list">
           <div class="skill-item">
             <div class="skill-info">
@@ -668,25 +1183,51 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
           <div class="skill-item">
             <div class="skill-info">
-              <span class="skill-name">WebSockets Protocol</span>
-              <span class="skill-pct">86%</span>
+              <span class="skill-name">Postman &amp; API Testing</span>
+              <span class="skill-pct">90%</span>
             </div>
             <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="86%"></div>
+              <div class="skill-bar-fill" data-percentage="90%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-info">
               <span class="skill-name">Docker &amp; Deployment</span>
-              <span class="skill-pct">70%</span>
+              <span class="skill-pct">75%</span>
             </div>
             <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="70%"></div>
+              <div class="skill-bar-fill" data-percentage="75%"></div>
             </div>
           </div>
         </div>
+        <div class="skill-tags-cloud">
+          <span class="skill-tag-pill magnetic-target">Git</span>
+          <span class="skill-tag-pill magnetic-target">GitHub</span>
+          <span class="skill-tag-pill magnetic-target">Postman</span>
+          <span class="skill-tag-pill magnetic-target">Docker</span>
+          <span class="skill-tag-pill magnetic-target">Vercel</span>
+          <span class="skill-tag-pill magnetic-target">JWT</span>
+          <span class="skill-tag-pill magnetic-target">Gearset</span>
+          <span class="skill-tag-pill magnetic-target">Figma</span>
+        </div>
       </div>
 
+    </div>
+
+    <!-- Interests Panel -->
+    <div class="interests-panel glass-panel">
+      <div class="interests-title">
+        <i class="fa-solid fa-compass"></i> Engineering Interests &amp; Focus Domains
+      </div>
+      <div class="interests-tags">
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-microchip"></i> Agentic AI</span>
+        <span class="interest-pill magnetic-target"><i class="fa-brands fa-salesforce"></i> Salesforce Ecosystem</span>
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-cubes"></i> CRM Architecture</span>
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-gears"></i> Enterprise Automation</span>
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-brain"></i> AI Integration</span>
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-layer-group"></i> Full-Stack Engineering</span>
+        <span class="interest-pill magnetic-target"><i class="fa-solid fa-rocket"></i> Emerging Technologies</span>
+      </div>
     </div>
   </section>
 
@@ -700,58 +1241,146 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
       <div class="exp-container">
         <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
           <span class="section-tag">&lt;Timeline /&gt;</span>
-          <h2 class="section-title" style="display: block;">Journey &amp; Education</h2>
+          <h2 class="section-title skew-target" style="display: block;">Professional Journey &amp; Education</h2>
         </div>
 
         <div class="timeline">
-          <!-- Timeline Item: IT Admin -->
+
+          <!-- Role 1: Cloud Science Labs -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <span class="timeline-date">2026 - Present</span>
+              <h3 class="timeline-title">Software Engineer Intern</h3>
+              <div class="timeline-company">Cloud Science Labs <span>| Noida, Uttar Pradesh</span></div>
+            </div>
+            <div class="timeline-desc">
+              <p style="margin-bottom: 0.75rem;">
+                Working on enterprise CRM solutions, Salesforce development, AI-powered automation, and custom business application development.
+              </p>
+              
+              <div class="timeline-resp-area">
+                <div class="timeline-resp-title"><i class="fa-brands fa-salesforce"></i> Salesforce Development</div>
+                <ul>
+                  <li>Developing custom Salesforce solutions using Apex, Lightning Web Components (LWC), Salesforce Flows, and platform automation.</li>
+                  <li>Building asynchronous processing solutions using Queueable Apex and Batch Apex.</li>
+                  <li>Working with custom objects, standard objects, Lightning App Builder, permission management, and CRM configurations.</li>
+                  <li>Implementing Email-to-Case, Salesforce Files, external API integrations, and automated document processing.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-resp-area">
+                <div class="timeline-resp-title"><i class="fa-solid fa-robot"></i> Agentforce &amp; AI Solutions</div>
+                <ul>
+                  <li>Developing conversational AI agents using Salesforce Agentforce for customer service and business automation.</li>
+                  <li>Building WhatsApp-based customer engagement workflows, vehicle discovery, and test-drive booking experiences.</li>
+                  <li>Working with Agentforce instructions, variables, topics, actions, and Salesforce Flow integrations.</li>
+                  <li>Developing AI-powered employee assistance and inventory management workflows.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-resp-area">
+                <div class="timeline-resp-title"><i class="fa-solid fa-file-invoice"></i> Document AI &amp; Integrations</div>
+                <ul>
+                  <li>Implementing automated invoice and credit note processing using Salesforce Case automation and Document AI integrations.</li>
+                  <li>Developing document routing and asynchronous processing for PDF and CSV files.</li>
+                  <li>Integrating external document processing services through Named Credentials and Apex callouts.</li>
+                  <li>Working on error handling, processing status management, testing, and deployment.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-resp-area">
+                <div class="timeline-resp-title"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM Engineering</div>
+                <ul>
+                  <li>Designed and implemented a comprehensive Real Estate CRM data model in Bitrix24.</li>
+                  <li>Configured custom fields, relationships, layouts, Smart Process Automations, and business pipelines.</li>
+                  <li>Developed listing and enquiry management workflows with property matching functionality.</li>
+                  <li>Built custom application functionality using JavaScript, Node.js, Express, OAuth, and Bitrix24 webhooks.</li>
+                  <li>Developed a Gemini-powered chatbot concept for automated lead generation and CRM interaction.</li>
+                  <li>Explored Bitrix24 AI and Vibe Coding capabilities for intelligent CRM assistance.</li>
+                </ul>
+              </div>
+
+              <div class="timeline-tech-tags">
+                <span class="timeline-tech-pill">Salesforce</span>
+                <span class="timeline-tech-pill">Apex</span>
+                <span class="timeline-tech-pill">LWC</span>
+                <span class="timeline-tech-pill">Agentforce</span>
+                <span class="timeline-tech-pill">Salesforce Flow</span>
+                <span class="timeline-tech-pill">Document AI</span>
+                <span class="timeline-tech-pill">Bitrix24</span>
+                <span class="timeline-tech-pill">JavaScript</span>
+                <span class="timeline-tech-pill">Node.js</span>
+                <span class="timeline-tech-pill">Express</span>
+                <span class="timeline-tech-pill">REST APIs</span>
+                <span class="timeline-tech-pill">Google Gemini</span>
+                <span class="timeline-tech-pill">Gearset</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: IT Admin -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-header">
               <span class="timeline-date">Aug 2025 - Jan 2026</span>
               <h3 class="timeline-title">IT Admin</h3>
-              <div class="timeline-company">Saptam Decor pvt ltd <span>| Muzaffarnagar</span></div>
+              <div class="timeline-company">Saptam Decor Pvt. Ltd. <span>| Muzaffarnagar, Uttar Pradesh</span></div>
             </div>
             <div class="timeline-desc">
+              <p style="margin-bottom: 0.5rem;">Managed IT infrastructure and provided technical support for daily business operations.</p>
               <ul>
-                <li>Managed company systems and network devices.</li>
-                <li>Resolved hardware and software issues.</li>
-                <li>Installed and configured IT equipment.</li>
-                <li>Maintained data backups and system security.</li>
+                <li>Managed company IT infrastructure, networking devices, routers, and user systems.</li>
+                <li>Handled hardware and software troubleshooting, printer configuration, and network connectivity.</li>
+                <li>Managed CCTV/NVR systems, biometric attendance devices, and IT assets.</li>
+                <li>Maintained technical documentation, asset records, and internal IT operations.</li>
               </ul>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tech-pill">Networking</span>
+                <span class="timeline-tech-pill">Windows</span>
+                <span class="timeline-tech-pill">Hardware Troubleshooting</span>
+                <span class="timeline-tech-pill">CCTV</span>
+                <span class="timeline-tech-pill">IT Infrastructure</span>
+              </div>
             </div>
           </div>
 
-          <!-- Timeline Item 1 -->
+          <!-- Role 3: Front-End Developer Intern -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-header">
               <span class="timeline-date">Jun 2024 - Dec 2024</span>
-              <h3 class="timeline-title">Software Engineer Intern</h3>
-              <div class="timeline-company">MAKEMAYA <span>| Remote</span></div>
+              <h3 class="timeline-title">Front-End Developer Intern</h3>
+              <div class="timeline-company">MAKEMAYA Pvt. Ltd. <span>| Remote</span></div>
             </div>
             <div class="timeline-desc">
               <ul>
-                <li>Developed modular backend REST APIs using Python and Flask.</li>
-                <li>Integrated interactive real-time messaging modules with WebSockets.</li>
-                <li>Optimized database search profiles and pipeline indexing, reducing server latency.</li>
+                <li>Developed responsive web interfaces using HTML, CSS, and JavaScript.</li>
+                <li>Collaborated with development teams to implement frontend requirements.</li>
+                <li>Worked on UI improvements, application debugging, and project documentation.</li>
               </ul>
+              <div class="timeline-tech-tags">
+                <span class="timeline-tech-pill">HTML5</span>
+                <span class="timeline-tech-pill">CSS3</span>
+                <span class="timeline-tech-pill">JavaScript</span>
+                <span class="timeline-tech-pill">Frontend Development</span>
+              </div>
             </div>
           </div>
 
-          <!-- Timeline Item 2 -->
+          <!-- Education -->
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-header">
               <span class="timeline-date">2021 - 2025</span>
-              <h3 class="timeline-title">B.Tech in Computer Science</h3>
-              <div class="timeline-company">IMS Engineering College <span>| Ghaziabad, UP</span></div>
+              <h3 class="timeline-title">B.Tech, Computer Science &amp; Engineering</h3>
+              <div class="timeline-company">IMS Engineering College <span>| Ghaziabad, Uttar Pradesh</span></div>
             </div>
             <div class="timeline-desc">
-              <p>Specializing in Software Architectures, Algorithms, and Artificial Intelligence configurations.
-                Maintaining active participation in developer hackathons and coding societies.</p>
+              <p>Specializing in Software Architectures, Algorithms, and Artificial Intelligence configurations. Active participation in developer hackathons and coding societies.</p>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -759,12 +1388,12 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
       <div class="certs-container">
         <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
           <span class="section-tag">&lt;Badges /&gt;</span>
-          <h2 class="section-title" style="display: block;">Certifications</h2>
+          <h2 class="section-title skew-target" style="display: block;">Certifications</h2>
         </div>
 
         <div class="certs-panel">
 
-          <div class="cert-card glass-panel scroll-animate delay-100">
+          <div class="cert-card glass-panel scroll-animate delay-100 magnetic-target">
             <div class="cert-icon">
               <i class="fa-solid fa-award"></i>
             </div>
@@ -775,7 +1404,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
             </div>
           </div>
 
-          <div class="cert-card glass-panel scroll-animate delay-200">
+          <div class="cert-card glass-panel scroll-animate delay-200 magnetic-target">
             <div class="cert-icon">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
@@ -798,27 +1427,37 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
   <section id="contact" class="scroll-animate">
     <div class="section-header">
       <span class="section-tag">&lt;Contact /&gt;</span>
-      <h2 class="section-title">Get In Touch</h2>
+      <h2 class="section-title skew-target">Get In Touch</h2>
     </div>
 
     <div class="contact-grid">
       <div class="contact-info">
         <div class="contact-heading">
-          <h3>Let's build something epic together.</h3>
-          <p>Whether you're looking to integrate AI into your backend workflows, scale your socket connections, or just
-            talk shop, my inbox is open.</p>
+          <h3 class="skew-target">Let's build something epic together.</h3>
+          <p>Whether you're looking to develop Salesforce solutions, implement Agentforce AI agents, customize Bitrix24 CRM, or discuss full-stack opportunities, my inbox is open.</p>
         </div>
 
         <div class="contact-details-list">
+          <!-- Location -->
+          <div class="contact-item magnetic-target">
+            <div class="contact-item-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-item-content">
+              <span>Location</span>
+              <a>Noida, Uttar Pradesh, India</a>
+            </div>
+          </div>
+
           <!-- Email Contact -->
-          <div class="contact-item">
+          <div class="contact-item magnetic-target">
             <div class="contact-item-icon">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="contact-item-content">
               <span>Email Me</span>
               <a href="mailto:harsh77rajvanshi@gmail.com" id="email-link">harsh77rajvanshi@gmail.com</a>
-              <button class="btn btn-secondary" id="copy-email-btn"
+              <button class="btn btn-secondary magnetic-target" id="copy-email-btn"
                 style="padding: 0.15rem 0.45rem; font-size: 0.7rem; margin-top: 0.25rem;">
                 <i class="fa-solid fa-copy"></i> Copy
               </button>
@@ -826,7 +1465,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
 
           <!-- Phone Contact -->
-          <div class="contact-item">
+          <div class="contact-item magnetic-target">
             <div class="contact-item-icon">
               <i class="fa-solid fa-phone"></i>
             </div>
@@ -838,11 +1477,11 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
         </div>
 
         <div class="social-links">
-          <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="social-btn" title="GitHub"><i
+          <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="social-btn magnetic-target" title="GitHub"><i
               class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/harsh-rajvanshi-336a2422b/" target="_blank" rel="noopener" class="social-btn" title="LinkedIn"><i
+          <a href="https://www.linkedin.com/in/harsh-rajvanshi-336a2422b/" target="_blank" rel="noopener" class="social-btn magnetic-target" title="LinkedIn"><i
               class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:harsh77rajvanshi@gmail.com" class="social-btn" title="Email"><i
+          <a href="mailto:harsh77rajvanshi@gmail.com" class="social-btn magnetic-target" title="Email"><i
               class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
@@ -869,7 +1508,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
             <textarea id="form-message" class="form-input" placeholder="Tell me about your project details..."
               required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <button type="submit" class="btn btn-primary magnetic-target" style="width: 100%;">
             Send Message <i class="fa-solid fa-paper-plane" style="font-size: 0.85rem;"></i>
           </button>
         </form>
@@ -881,7 +1520,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
           </div>
           <h4>Message Dispatched!</h4>
           <p>Thank you for reaching out, Harsh. Your inquiry has been received, and I'll respond within 24 hours.</p>
-          <button class="btn btn-secondary" id="success-reset-btn">Send Another Message</button>
+          <button class="btn btn-secondary magnetic-target" id="success-reset-btn">Send Another Message</button>
         </div>
       </div>
     </div>
@@ -895,7 +1534,7 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
       <div class="footer-text">
         &copy; 2026 Harsh Rajvanshi. Crafted with <span>&hearts;</span> in Noida.
       </div>
-      <button class="footer-scroll-top" id="scroll-to-top-btn" title="Back to top">
+      <button class="footer-scroll-top magnetic-target" id="scroll-to-top-btn" title="Back to top">
         <i class="fa-solid fa-chevron-up"></i>
       </button>
     </div>
@@ -906,7 +1545,18 @@ app.get('/api/patient/records', authenticateToken, async (req, res) => {
     <i class="fa-solid fa-circle-check"></i> Email copied to clipboard!
   </div>
 
-  <!-- JavaScript Link -->
+  <!-- CDN Scripts for Ultra-Interactivity -->
+  <!-- 1. Lenis Smooth Scrolling -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- 2. GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- 3. Three.js for 3D WebGL Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main JavaScript Logic -->
   <script src="script.js"></script>
 </body>
 
