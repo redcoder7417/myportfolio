@@ -256,6 +256,85 @@ section[id] {
 }
 
 /* Interactive CTA buttons */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  section {
+    padding: 4rem 1.5rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-visual {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-card);
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .mobile-nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  header.scrolled .nav-links {
+    background: var(--bg-card);
+  }
+  .nav-container {
+    padding: 1rem 1.5rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-item {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+}
+
+/* End of Responsive Design */
 .btn {
   display: inline-flex;
   align-items: center;
