@@ -37,28 +37,41 @@
   --font-headings: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'Fira Code', monospace;
-  cursor: none;
+
   /* Animation & Transitions */
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ================================================================
    1. Base & Reset Styles
    ================================================================ */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 html {
   scroll-behavior: smooth;
-  cursor: none;
   font-size: 16px;
   background-color: var(--bg-darker);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -66,8 +79,8 @@ body {
   color: var(--text-main);
   background-color: var(--bg-main);
   line-height: 1.6;
-  overflow-x: hidden;
   position: relative;
+  text-rendering: optimizeLegibility;
 }
 
 /* Glowing Background Gradients */
@@ -256,85 +269,6 @@ section[id] {
 }
 
 /* Interactive CTA buttons */
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  section {
-    padding: 4rem 1.5rem;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-  }
-  .hero-content {
-    align-items: center;
-  }
-  .hero-visual {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--bg-card);
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 1rem 2rem;
-    gap: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    display: none;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .mobile-nav-toggle {
-    display: block;
-    cursor: pointer;
-  }
-  header.scrolled .nav-links {
-    background: var(--bg-card);
-  }
-  .nav-container {
-    padding: 1rem 1.5rem;
-  }
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .hero-content h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-  }
-  .hero-content p {
-    font-size: 1rem;
-  }
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo {
-    font-size: 1.2rem;
-  }
-  .nav-item {
-    font-size: 0.85rem;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-  .hero-content h1 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-  }
-}
-
-/* End of Responsive Design */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -562,10 +496,12 @@ header.scrolled {
 }
 
 .hero-title {
-  font-size: 3.8rem;
+  font-size: clamp(2rem, 5vw + 1rem, 3.8rem);
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title span {
@@ -616,6 +552,7 @@ header.scrolled {
   display: flex;
   gap: 1.2rem;
   margin-bottom: 3.5rem;
+  flex-wrap: wrap;
 }
 
 /* Floating Tech Logos Animation */
@@ -1773,6 +1710,18 @@ footer {
 @media (max-width: 768px) {
 
   /* Navigation */
+  .nav-container {
+    padding: 1rem 1.25rem;
+  }
+
+  .hud-time {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.75rem;
+  }
+
   .mobile-nav-toggle {
     display: flex;
   }
@@ -1827,11 +1776,20 @@ footer {
 
   .hero-actions {
     justify-content: center;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-webgl-wrapper {
+    height: 380px;
   }
 
   .hero-visual {
     order: -1;
-    /* Place image on top on mobile/tablet */
     margin-bottom: 1.5rem;
   }
 
@@ -1866,15 +1824,28 @@ footer {
 
 @media (max-width: 480px) {
   section {
-    padding: 4.5rem 1.25rem;
+    padding: 3.5rem 1rem;
   }
 
   .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+  }
+
+  .hero-webgl-wrapper {
+    height: 300px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .stats-grid {
@@ -2307,6 +2278,8 @@ html.lenis body {
 .hero-webgl-wrapper {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   height: 480px;
   border-radius: 20px;
   overflow: hidden;
@@ -2576,7 +2549,7 @@ html.lenis body {
 @media (max-width: 900px) {
   .showcase-pinned-wrapper {
     height: auto !important;
-    padding: 4.5rem 1.5rem !important;
+    padding: 3.5rem 1rem !important;
   }
 
   .showcase-sticky-container {
@@ -2585,6 +2558,11 @@ html.lenis body {
     max-height: none !important;
     overflow: visible !important;
     padding: 0 !important;
+  }
+
+  .horizontal-track-container {
+    cursor: default;
+    overflow: visible !important;
   }
 
   .horizontal-track {
@@ -2601,5 +2579,18 @@ html.lenis body {
 
   .showcase-nav-controls {
     display: none !important;
+  }
+}
+
+/* Reduced Motion & Hardware Acceleration Best Practices */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none !important;
   }
 }
