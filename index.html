@@ -1,1570 +1,743 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth bg-[#070708] text-white antialiased">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Harsh Rajvanshi - Software Engineer | Salesforce & CRM Solutions Developer. Specialized in Salesforce, Agentforce, Bitrix24, Document AI, and intelligent enterprise automation.">
-  <meta name="keywords"
-    content="Harsh Rajvanshi, Software Engineer, Salesforce Developer, Apex, LWC, Agentforce, Bitrix24, CRM Developer, AI Agents, Document AI, Full-Stack Developer, Python, React, Cloud Science Labs">
-  <meta name="author" content="Harsh Rajvanshi">
-  <title>Harsh Rajvanshi | Software Engineer | Salesforce &amp; CRM Solutions Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh Rajvanshi — Software Engineer | Salesforce, Agentforce &amp; Python</title>
+  <meta name="description" content="Harsh Rajvanshi — Software Engineer turning business requirements into Salesforce automation, Agentforce AI agents, Document AI pipelines, and Python/React applications." />
+  <meta name="author" content="Harsh Rajvanshi" />
 
-  <!-- OpenGraph Meta Tags for social sharing -->
-  <meta property="og:title" content="Harsh Rajvanshi | Software Engineer | Salesforce &amp; CRM Solutions">
-  <meta property="og:description"
-    content="Building intelligent applications, enterprise CRM solutions, and AI-powered business automation. Specializing in Salesforce, Agentforce, Bitrix24, and full-stack engineering.">
-  <meta property="og:image" content="images/bespin_document_ai.svg">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Harsh Rajvanshi — Software Engineer | Salesforce, Agentforce &amp; Python" />
+  <meta property="og:description" content="Software built for scale. Automated with AI. Salesforce, Agentforce, Document AI, Data Cloud, Python &amp; React." />
+  <meta property="og:image" content="images/bespin_document_ai.svg" />
+  <meta property="og:type" content="website" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['Geist Mono', 'ui-monospace', 'monospace']
+          },
+          colors: {
+            lv: {
+              bg: '#070708',
+              gold: '#ffb100',
+              goldHover: '#ffc740',
+              muted: '#8a8a86',
+              faint: '#5a5a57'
+            }
+          }
+        }
+      }
+    };
+  </script>
 
-  <!-- CSS Link -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --lv-bg: #070708;
+      --lv-gold: #ffb100;
+      --lv-muted: #8a8a86;
+      --lv-faint: #5a5a57;
+      --lv-hairline: rgba(255, 255, 255, 0.08);
+      --lv-hairline-strong: rgba(255, 255, 255, 0.14);
+    }
+    html, body {
+      background-color: #070708;
+      color: #ffffff;
+      overflow-x: clip;
+      max-width: 100vw;
+    }
+    /* Subtle Film Grain matching levo-studio.com */
+    .levo-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    @keyframes levo-pulse {
+      0%, 100% { opacity: 0.9; box-shadow: 0 0 0 0 rgba(255, 177, 0, 0.4); }
+      50% { opacity: 1; box-shadow: 0 0 0 6px rgba(255, 177, 0, 0); }
+    }
+    .levo-dot-pulse {
+      animation: 2s ease-in-out infinite levo-pulse;
+    }
+    @keyframes levo-blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .levo-cursor {
+      animation: 1.05s step-end infinite levo-blink;
+    }
+    @keyframes levo-hero-in {
+      0% { opacity: 0; filter: blur(8px); transform: translateY(24px); }
+      100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+    }
+    .hero-stagger > * {
+      animation: 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) both levo-hero-in;
+    }
+    .hero-stagger > *:nth-child(1) { animation-delay: 60ms; }
+    .hero-stagger > *:nth-child(2) { animation-delay: 160ms; }
+    .hero-stagger > *:nth-child(3) { animation-delay: 260ms; }
+    .hero-stagger > *:nth-child(4) { animation-delay: 360ms; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .skill-fill {
+      width: 0;
+      transition: width 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .crawl .w {
+      display: inline-block;
+      transition: color 0.12s linear, opacity 0.12s linear;
+      will-change: opacity, color;
+    }
+    .levo-card__sticky {
+      box-shadow: 0 -40px 80px rgba(0, 0, 0, 0.78);
+    }
+    .draw {
+      will-change: stroke-dashoffset, opacity;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #070708; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.14); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ffb100; }
+  </style>
 </head>
+<body class="bg-[#070708] text-white font-sans selection:bg-[#ffb100]/30 selection:text-[#ffb100]">
 
-<body>
-
-  <!-- Retro CRT Noise Grain Overlay -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-
-  <!-- Fluid Magnetic Custom Cursor -->
-  <div class="custom-cursor" id="custom-cursor"></div>
-  <div class="custom-cursor-follower" id="custom-cursor-follower">
-    <span class="cursor-label" id="cursor-label">EXPLORE</span>
-  </div>
+  <!-- Film Grain Overlay -->
+  <div class="levo-grain" aria-hidden="true"></div>
 
   <!-- ================================================================
-       Header & Navigation
+       MINIMAL FLOATING HEADER
        ================================================================ -->
-  <header id="header">
-    <div class="nav-container">
-      <a href="#home" class="logo magnetic-target" id="nav-logo">
-        <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
-        <div class="logo-text">Harsh<span>.dev</span></div>
+  <header class="sticky top-0 z-50 border-b border-white/[0.08] bg-[#070708]/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-[6vw] h-16 flex items-center justify-between gap-4">
+      <a href="#home" class="inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.14em] text-[#8a8a86] hover:text-white transition-colors">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#ffb100] levo-dot-pulse"></span>
+        <span>Harsh Rajvanshi</span>
+        <span class="text-[#5a5a57] hidden sm:inline">/</span>
+        <span class="text-[#5a5a57] hidden sm:inline">Noida, IN</span>
       </a>
 
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#home" class="nav-item magnetic-target active">Home</a></li>
-          <li><a href="#about" class="nav-item magnetic-target">About</a></li>
-          <li><a href="#featured" class="nav-item magnetic-target">Showcase</a></li>
-          <li><a href="#projects" class="nav-item magnetic-target">Projects</a></li>
-          <li><a href="#skills" class="nav-item magnetic-target">Skills</a></li>
-          <li><a href="#experience" class="nav-item magnetic-target">Experience</a></li>
-          <li><a href="#contact" class="nav-item magnetic-target">Contact</a></li>
-        </ul>
+      <nav class="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.14em] text-[#8a8a86]">
+        <a href="#capabilities" class="hover:text-[#ffb100] transition-colors">Capabilities</a>
+        <a href="#projects" class="hover:text-[#ffb100] transition-colors">Work</a>
+        <a href="#experience" class="hover:text-[#ffb100] transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-[#ffb100] transition-colors">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <!-- Live HUD Clock Indicator -->
-        <span class="hud-time" id="hud-clock" title="Live Terminal Clock">IST --:--:--</span>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="Harsh_Rajvanshi_11-2026.pdf" download class="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8a8a86] hover:text-white border-b border-white/15 pb-0.5 transition-colors">
+          Resume PDF
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center h-9 px-5 rounded-full bg-[#ffb100] hover:bg-[#ffc740] text-[#070708] text-xs font-medium tracking-tight transition-all hover:-translate-y-0.5">
+          Talk to me
+        </a>
+      </div>
 
-        <!-- Sensory Sound Toggle Button -->
-        <button class="sound-toggle-btn magnetic-target" id="sound-toggle" aria-label="Toggle sensory sound effects"
-          title="Toggle Sensory Audio Micro-FX">
-          <span class="sound-bars" aria-hidden="true">
-            <span class="sound-bar"></span>
-            <span class="sound-bar"></span>
-            <span class="sound-bar"></span>
-            <span class="sound-bar"></span>
-          </span>
-          <span class="sound-label" id="sound-label">FX OFF</span>
-        </button>
+      <button id="mobile-menu-btn" aria-label="Toggle menu" class="md:hidden p-2 text-[#8a8a86] hover:text-white">
+        <i class="fa-solid fa-bars text-base" id="mobile-menu-icon"></i>
+      </button>
+    </div>
 
-        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/[0.08] bg-[#070708]/95 backdrop-blur-xl px-[6vw] py-5 space-y-3 font-mono text-xs uppercase tracking-[0.14em]">
+      <a href="#capabilities" class="mobile-link block py-1.5 text-[#8a8a86] hover:text-[#ffb100]">Capabilities</a>
+      <a href="#projects" class="mobile-link block py-1.5 text-[#8a8a86] hover:text-[#ffb100]">Work</a>
+      <a href="#experience" class="mobile-link block py-1.5 text-[#8a8a86] hover:text-[#ffb100]">Experience</a>
+      <a href="#contact" class="mobile-link block py-1.5 text-[#8a8a86] hover:text-[#ffb100]">Contact</a>
+      <div class="pt-3 border-t border-white/[0.08] flex flex-col gap-3">
+        <a href="Harsh_Rajvanshi_11-2026.pdf" download class="w-full h-11 rounded-full border border-white/15 text-white inline-flex items-center justify-center gap-2 font-sans text-sm font-medium">
+          Download Resume
+        </a>
+        <a href="#contact" class="mobile-link w-full h-11 rounded-full bg-[#ffb100] text-[#070708] inline-flex items-center justify-center font-sans text-sm font-medium">
+          Talk to an engineer
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- ================================================================
-       Hero Section
-       ================================================================ -->
-  <section id="home" class="hero">
-    <div class="hero-grid">
-      <div class="hero-content scroll-animate">
-        <div class="hero-tagline">
-          <span><i class="fa-solid fa-circle-dot" style="color: #10b981; font-size: 0.65rem;"></i> SYSTEM ONLINE // NOIDA, IN</span>
-        </div>
-        <h1 class="hero-title skew-target">
-          Hi, I'm Harsh Rajvanshi
-          <span>Software Engineer |</span>
-          <span class="typed-text" id="typed-text"></span>
-        </h1>
-        <p class="hero-desc">
-          Building intelligent applications, <span>enterprise CRM solutions</span>, and <span>AI-powered business automation</span>. Specializing in Salesforce, Agentforce, Bitrix24, and full-stack application development.
+  <main>
+    <!-- ================================================================
+         HERO — Editorial Levo Studio Style
+         ================================================================ -->
+    <section id="home" class="relative isolate min-h-[calc(100vh-4rem)] flex flex-col justify-center px-[6vw] py-16">
+      <!-- Warm Gold Radial Glow -->
+      <div aria-hidden="true" class="pointer-events-none absolute -top-[18vh] -left-[10vw] w-[85vw] h-[85vh] -z-10" style="background: radial-gradient(closest-side, rgba(255,177,0,0.11), rgba(255,177,0,0) 70%);"></div>
+
+      <div class="max-w-7xl w-full mx-auto hero-stagger">
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-[#8a8a86] flex items-center gap-3 mb-8 sm:mb-10">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ffb100] inline-block"></span>
+          <span>Salesforce, Agentforce &amp; Python</span>
+          <span class="text-[#5a5a57]">/</span>
+          <span>Open to Work</span>
         </p>
-        <div class="hero-actions">
-          <a href="#featured" class="btn btn-primary magnetic-target">View Showcase <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-secondary magnetic-target">Get In Touch</a>
-    <a href="Harsh_Rajvanshi_11-2026.pdf" class="btn btn-primary magnetic-target" download>Download Resume</a>
+
+        <h1 class="text-[clamp(2rem,8.4vw,2.9rem)] sm:text-[clamp(2.6rem,7vw,7.5rem)] font-medium tracking-[-0.04em] leading-[1.12] sm:leading-[1.02] m-0">
+          <span class="block text-white">Software built for scale.</span>
+          <span class="block text-[#8a8a86]">Automated with AI.</span>
+        </h1>
+
+        <p class="max-w-[46ch] text-[#8a8a86] mt-10 text-[clamp(1rem,1.25vw,1.15rem)] leading-[1.55]">
+          I turn complex business requirements into working Salesforce automation, Agentforce AI workflows, Document AI pipelines, and full-stack Python &amp; React applications.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-5 mt-11">
+          <a href="#contact" class="inline-flex items-center justify-center min-w-[180px] h-12 px-7 rounded-full bg-[#ffb100] hover:bg-[#ffc740] text-[#070708] text-[15px] font-medium tracking-[-0.01em] transition-all hover:-translate-y-0.5">
+            Talk to an engineer
+          </a>
+          <a href="Harsh_Rajvanshi_11-2026.pdf" download class="text-[14px] text-[#8a8a86] hover:text-white border-b border-white/[0.14] pb-[3px] transition-colors inline-flex items-center gap-2">
+            Download Resume <span class="text-[#ffb100]">↓</span>
+          </a>
+          <a href="#projects" class="text-[14px] text-[#8a8a86] hover:text-white border-b border-white/[0.14] pb-[3px] transition-colors">
+            See what I build
+          </a>
         </div>
       </div>
 
-      <!-- Interactive 3D WebGL Element -->
-      <div class="hero-visual scroll-animate delay-200">
-        <div class="hero-webgl-wrapper" id="hero-3d-wrapper">
-          <canvas id="hero-webgl-canvas"></canvas>
-          <div class="webgl-hint">
-            <i class="fa-solid fa-arrows-spin"></i> Drag to spin 3D AI Core
-          </div>
-        </div>
+      <!-- Hero Footer Strip -->
+      <div class="max-w-7xl w-full mx-auto mt-16 sm:mt-24 pt-6 flex items-end justify-between font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a5a57]">
+        <span>Cloud Science Labs · Noida, India</span>
+        <span class="inline-flex items-center gap-2">
+          Scroll
+          <span class="inline-block w-px h-6 bg-gradient-to-b from-[#5a5a57] to-transparent"></span>
+        </span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ================================================================
-       Infinite Marquee Tech Ticker
-       ================================================================ -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item"><i class="fa-brands fa-salesforce"></i> Salesforce CRM</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentforce</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-code"></i> Apex &amp; LWC</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-file-invoice"></i> Document AI</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-diagram-project"></i> Salesforce Flows</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-brain"></i> Google Gemini API</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-python"></i> Python &amp; FastAPI</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-database"></i> MongoDB &amp; Vector DBs</span>
-      <span class="marquee-separator">✦</span>
-      <!-- Duplicate track for seamless infinite loop -->
-      <span class="marquee-item"><i class="fa-brands fa-salesforce"></i> Salesforce CRM</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-robot"></i> Agentforce</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-code"></i> Apex &amp; LWC</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-file-invoice"></i> Document AI</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-diagram-project"></i> Salesforce Flows</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-brain"></i> Google Gemini API</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-react"></i> React.js</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-node-js"></i> Node.js &amp; Express</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-brands fa-python"></i> Python &amp; FastAPI</span>
-      <span class="marquee-separator">✦</span>
-      <span class="marquee-item"><i class="fa-solid fa-database"></i> MongoDB &amp; Vector DBs</span>
-      <span class="marquee-separator">✦</span>
-    </div>
-  </div>
-
-  <!-- ================================================================
-       About Section
-       ================================================================ -->
-  <section id="about" class="scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">&lt;About /&gt;</span>
-      <h2 class="section-title skew-target">Developer Overview</h2>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-content">
-        <h3 class="skew-target">Building intelligent applications &amp; enterprise CRM solutions.</h3>
-        <div class="about-text">
-          <p>
-            I'm a <strong>Software Engineer</strong> with hands-on experience in <strong>Salesforce development</strong>, <strong>CRM engineering</strong>, <strong>AI agent development</strong>, and full-stack application development. I work across the software development lifecycle, from designing application architecture and developing backend services to building CRM automation and integrating AI into real-world business workflows.
+    <!-- ================================================================
+         01 — PHILOSOPHY (Pinned Scroll-Linked Word Crawl)
+         ================================================================ -->
+    <section class="levo-pin relative border-t border-white/[0.08] md:h-[340vh]" data-pin="true">
+      <div class="md:sticky md:top-0 md:h-screen flex flex-col justify-center px-[6vw] py-24 md:py-0 overflow-hidden relative">
+        <div aria-hidden="true" class="pointer-events-none absolute -bottom-[35vh] -right-[10vw] w-[75vw] h-[80vh]" style="background: radial-gradient(closest-side, rgba(255,177,0,0.09), rgba(255,177,0,0) 70%);"></div>
+        <div class="max-w-7xl w-full mx-auto">
+          <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57] mb-11">01 — Philosophy</p>
+          <p class="crawl text-[clamp(2rem,4.6vw,4.4rem)] font-medium tracking-[-0.03em] leading-[1.12] max-w-[min(20ch,92vw)] text-[#8a8a86]" data-range="0.06,0.86">
+            I build enterprise automation and AI systems that stay honest:
+            <b class="text-white font-medium">reliable</b>,
+            <b class="text-white font-medium">documented</b>,
+            <b class="text-white font-medium">role-secured</b>,
+            validated with stakeholders, and
+            <b class="text-[#ffb100] font-medium">never a black box</b>.
           </p>
-          <p>
-            My current focus is on <strong>Salesforce</strong>, <strong>Agentforce</strong>, <strong>Bitrix24</strong>, and <strong>intelligent automation</strong> — bridging enterprise processes with cutting-edge conversational agents, Document AI, and scalable cloud systems.
-          </p>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card glass-panel magnetic-target">
-            <span class="stat-number gradient-text" data-counter="4">4+</span>
-            <span class="stat-label">Enterprise &amp; AI Solutions</span>
-          </div>
-          <div class="stat-card glass-panel magnetic-target">
-            <span class="stat-number gradient-text" data-counter="3">3</span>
-            <span class="stat-label">Industry Experiences</span>
-          </div>
-          <div class="stat-card glass-panel magnetic-target">
-            <span class="stat-number gradient-text">CRM &amp; AI</span>
-            <span class="stat-label">Specialist</span>
+          <div class="mt-14 w-full max-w-[420px] h-px bg-white/[0.08] relative">
+            <span class="levo-pinbar__fill absolute inset-y-0 left-0 w-0 bg-[#ffb100]"></span>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Terminal Mockup -->
-      <div class="terminal-container">
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-controls">
-              <span class="terminal-circle circle-red"></span>
-              <span class="terminal-circle circle-yellow"></span>
-              <span class="terminal-circle circle-green"></span>
-            </div>
-            <div class="terminal-title">harsh_rajvanshi.json</div>
-            <div class="terminal-actions">
-              <button class="terminal-tab-btn active magnetic-target" data-tab="profile">profile.json</button>
-              <button class="terminal-tab-btn magnetic-target" data-tab="bash">bash</button>
-            </div>
-          </div>
-          <div class="terminal-body" id="terminal-body">
-            <!-- JSON tab display -->
-            <div class="terminal-tab-content active" id="terminal-tab-profile">
-              <pre class="terminal-output json"><code>{
-  <span class="json-key">"name"</span>: <span class="json-val-str">"Harsh Rajvanshi"</span>,
-  <span class="json-key">"role"</span>: <span class="json-val-str">"Software Engineer | Salesforce &amp; CRM Solutions"</span>,
-  <span class="json-key">"location"</span>: <span class="json-val-str">"Noida, Uttar Pradesh, India"</span>,
-  <span class="json-key">"currentFocus"</span>: [
-    <span class="json-val-str">"Salesforce (Apex, LWC, Flows)"</span>,
-    <span class="json-val-str">"Agentforce &amp; Conversational AI"</span>,
-    <span class="json-val-str">"Bitrix24 CRM Architecture &amp; SPAs"</span>,
-    <span class="json-val-str">"Document AI &amp; Enterprise Automation"</span>
-  ],
-  <span class="json-key">"education"</span>: <span class="json-val-str">"IMS Engineering College"</span>,
-  <span class="json-key">"openToWork"</span>: <span class="json-val-bool">true</span>
-}</code></pre>
-            </div>
-
-            <!-- Terminal command buttons (Interactive bash) -->
-            <div class="terminal-tab-content" id="terminal-tab-bash">
-              <div class="terminal-prompt">guest@harsh:~$ <span>click a command button below:</span></div>
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="cat info.txt"
-                  style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">cat info.txt</button>
-                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="npm run dev"
-                  style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">npm run dev</button>
-                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="python app.py"
-                  style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">python app.py</button>
-                <button class="btn btn-secondary terminal-cmd-trigger magnetic-target" data-cmd="clear"
-                  style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">clear</button>
-              </div>
-              <div class="terminal-prompt" id="bash-prompt-prefix" style="display:none;">guest@harsh:~$ <span
-                  id="bash-typed-cmd"></span></div>
-              <div class="terminal-output" id="terminal-bash-output">Outputs will be rendered here interactive...</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- ================================================================
+         WHAT I BUILD — NUMBERED CAPABILITIES + PINNED SVG ARCHITECTURE
+         ================================================================ -->
+    <div id="capabilities" class="border-t border-white/[0.08] px-[6vw] pt-20 pb-10 max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] font-medium tracking-[-0.03em] leading-[1.05]">What I build</h2>
+      <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57]">Capabilities</span>
     </div>
-  </section>
 
-  <!-- ================================================================
-       Horizontal Pinned Showcase: Featured Enterprise Solutions
-       ================================================================ -->
-  <section id="featured" class="showcase-pinned-wrapper">
-    <div class="showcase-sticky-container">
-      <div class="showcase-header">
-        <div>
-          <span class="section-tag">&lt;Showcase /&gt;</span>
-          <h2 class="section-title skew-target">Featured Enterprise &amp; AI Engineering</h2>
-        </div>
-
-        <div class="showcase-nav-controls">
-          <div class="showcase-progress-indicator">
-            <span class="showcase-counter" id="showcase-counter">01 / 04</span>
-            <div class="showcase-progress-bar-bg">
-              <div class="showcase-progress-bar-fill" id="showcase-progress-fill"></div>
-            </div>
+    <!-- Capability 02: Agentforce & WhatsApp AI -->
+    <section class="levo-pin relative border-t border-white/[0.08] md:h-[300vh]" data-pin="true">
+      <div class="levo-card__sticky bg-[#070708] md:sticky md:top-0 md:h-screen flex items-center px-[6vw] py-16 md:py-0 overflow-hidden">
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6">
+            <p class="flex items-baseline gap-4 mb-6">
+              <span class="font-mono text-xs tracking-[0.12em] text-[#ffb100]">02</span>
+              <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57]">Capability</span>
+            </p>
+            <h3 class="text-[clamp(1.8rem,3.4vw,3rem)] font-medium tracking-[-0.03em] leading-[1.05] mb-7">
+              Agentforce &amp; WhatsApp AI
+            </h3>
+            <p class="crawl text-[#8a8a86] text-[clamp(1.05rem,1.6vw,1.6rem)] tracking-[-0.01em] leading-[1.45] max-w-[34ch]" data-range="0.1,0.78">
+              Conversational AI agents that turn customer discovery, inquiry handling, lead capture, and test-drive booking into <b class="text-white font-medium">autonomous WhatsApp &amp; Flow workflows</b> — with seamless <b class="text-white font-medium">Omnichannel escalation</b>.
+            </p>
+            <a href="#projects" class="inline-flex items-center gap-2.5 mt-9 font-mono text-xs uppercase tracking-[0.14em] text-[#ffb100] hover:text-white transition-colors">
+              Inspect the build <span>→</span>
+            </a>
           </div>
-          <div class="showcase-arrows">
-            <button class="showcase-arrow-btn magnetic-target" id="showcase-prev" aria-label="Previous Project" title="Previous Project">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button class="showcase-arrow-btn magnetic-target" id="showcase-next" aria-label="Next Project" title="Next Project">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+
+          <div class="lg:col-span-6">
+            <svg class="w-full max-h-[340px]" viewBox="0 0 420 340" fill="none" role="img" aria-label="Diagram: WhatsApp to Agentforce to Flows and Salesforce CRM">
+              <rect class="draw" x="60" y="30" width="300" height="62" rx="8" stroke="#FFB100" stroke-width="1" />
+              <rect class="draw" x="20" y="140" width="170" height="62" rx="8" stroke="rgba(255,255,255,.35)" stroke-width="1" />
+              <rect class="draw" x="230" y="140" width="170" height="62" rx="8" stroke="rgba(255,255,255,.35)" stroke-width="1" />
+              <rect class="draw" x="110" y="250" width="200" height="62" rx="8" stroke="rgba(255,255,255,.2)" stroke-width="1" />
+              <path class="draw" d="M150 92 V116 H105 V140" stroke="rgba(255,255,255,.28)" stroke-width="1" />
+              <path class="draw" d="M270 92 V116 H315 V140" stroke="rgba(255,255,255,.28)" stroke-width="1" />
+              <path class="draw" d="M105 202 V226 H210 V250" stroke="rgba(255,255,255,.28)" stroke-width="1" />
+              <path class="draw" d="M315 202 V226 H210 V250" stroke="rgba(255,255,255,.28)" stroke-width="1" />
+              <circle cx="210" cy="61" r="3" fill="#FFB100" />
+              <text x="78" y="65" fill="#8A8A86" font-size="11" font-family="monospace" letter-spacing="1.5">whatsapp · agentforce</text>
+              <text x="36" y="175" fill="#8A8A86" font-size="11" font-family="monospace" letter-spacing="1.5">flows</text>
+              <text x="246" y="175" fill="#8A8A86" font-size="11" font-family="monospace" letter-spacing="1.5">omnichannel</text>
+              <text x="128" y="285" fill="#5A5A57" font-size="11" font-family="monospace" letter-spacing="1.5">salesforce crm</text>
+            </svg>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="horizontal-track-container" id="horizontal-track-container">
-        <div class="horizontal-track" id="featured-track">
+    <!-- Capability 03: Document AI & Async Apex -->
+    <section class="levo-pin relative border-t border-white/[0.08] md:h-[300vh]" data-pin="true">
+      <div class="levo-card__sticky bg-[#070708] md:sticky md:top-0 md:h-screen flex items-center px-[6vw] py-16 md:py-0 overflow-hidden">
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6">
+            <p class="flex items-baseline gap-4 mb-6">
+              <span class="font-mono text-xs tracking-[0.12em] text-[#ffb100]">03</span>
+              <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57]">Capability</span>
+            </p>
+            <h3 class="text-[clamp(1.8rem,3.4vw,3rem)] font-medium tracking-[-0.03em] leading-[1.05] mb-7">
+              Document AI &amp; Async Apex
+            </h3>
+            <p class="crawl text-[#8a8a86] text-[clamp(1.05rem,1.6vw,1.6rem)] tracking-[-0.01em] leading-[1.45] max-w-[34ch]" data-range="0.1,0.78">
+              Automated PDF and CSV invoice &amp; quotation pipelines. Built with <b class="text-white font-medium">Document AI, Data Cloud, and Queueable/Batch Apex</b> — replacing manual data entry with <b class="text-white font-medium">automatic record creation</b>.
+            </p>
+            <a href="#projects" class="inline-flex items-center gap-2.5 mt-9 font-mono text-xs uppercase tracking-[0.14em] text-[#ffb100] hover:text-white transition-colors">
+              See architecture <span>→</span>
+            </a>
+          </div>
 
-        <!-- Showcase 1: Bitrix24 Real Estate CRM -->
-        <div class="horizontal-card-slide">
-          <article class="project-card glass-panel project-card-cyan" data-category="crm">
-            <div class="card-glare"></div>
-            <div class="project-image-wrapper">
-              <img src="images/bitrix_crm.svg" alt="Bitrix24 Real Estate CRM Preview" class="project-img">
-              <div class="project-badge-overlay">
-                <span class="badge badge-cyan"><i class="fa-solid fa-building"></i> Enterprise CRM</span>
-              </div>
-              <div class="project-tech-tabs">
-                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-                <button class="project-tab-trigger" data-proj-tab="code">Webhook &amp; SPA</button>
+          <div class="lg:col-span-6">
+            <svg class="w-full max-h-[340px]" viewBox="0 0 420 340" fill="none" role="img" aria-label="Diagram: Document AI and Async Apex stack">
+              <rect class="draw" x="100" y="20" width="220" height="300" rx="10" stroke="rgba(255,255,255,.25)" stroke-width="1" />
+              <rect class="draw" x="118" y="42" width="184" height="36" rx="4" stroke="#FFB100" stroke-width="1" />
+              <rect class="draw" x="118" y="90" width="184" height="36" rx="4" stroke="rgba(255,255,255,.35)" stroke-width="1" />
+              <rect class="draw" x="118" y="138" width="184" height="36" rx="4" stroke="rgba(255,255,255,.35)" stroke-width="1" />
+              <rect class="draw" x="118" y="186" width="184" height="36" rx="4" stroke="rgba(255,255,255,.24)" stroke-width="1" />
+              <rect class="draw" x="118" y="234" width="184" height="36" rx="4" stroke="rgba(255,255,255,.2)" stroke-width="1" />
+              <circle cx="134" cy="60" r="2.5" fill="#FFB100" />
+              <text x="148" y="64" fill="#fff" font-size="11" font-family="monospace">document ai</text>
+              <text x="134" y="112" fill="#8A8A86" font-size="11" font-family="monospace">data cloud</text>
+              <text x="134" y="160" fill="#8A8A86" font-size="11" font-family="monospace">queueable / batch</text>
+              <text x="134" y="208" fill="#8A8A86" font-size="11" font-family="monospace">named credentials</text>
+              <text x="134" y="256" fill="#5A5A57" font-size="11" font-family="monospace">salesforce records</text>
+              <path class="draw" d="M100 60 H40 V252 H100" stroke="rgba(255,255,255,.2)" stroke-width="1" />
+              <text x="20" y="295" fill="#5A5A57" font-size="10" font-family="monospace" letter-spacing="1.2">email-to-case</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capability 04: Security, Dashboards & Full-Stack -->
+    <section class="levo-pin relative border-t border-white/[0.08] md:h-[300vh]" data-pin="true">
+      <div class="levo-card__sticky bg-[#070708] md:sticky md:top-0 md:h-screen flex items-center px-[6vw] py-16 md:py-0 overflow-hidden">
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="lg:col-span-6">
+            <p class="flex items-baseline gap-4 mb-6">
+              <span class="font-mono text-xs tracking-[0.12em] text-[#ffb100]">04</span>
+              <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57]">Capability</span>
+            </p>
+            <h3 class="text-[clamp(1.8rem,3.4vw,3rem)] font-medium tracking-[-0.03em] leading-[1.05] mb-7">
+              BI, Security &amp; Full-Stack Apps
+            </h3>
+            <p class="crawl text-[#8a8a86] text-[clamp(1.05rem,1.6vw,1.6rem)] tracking-[-0.01em] leading-[1.45] max-w-[34ch]" data-range="0.1,0.78">
+              Role-based <b class="text-white font-medium">Permission Set Groups</b>, executive Reports &amp; Dashboards, Git/Gearset CI/CD, plus full-stack <b class="text-white font-medium">Python (FastAPI/Flask) &amp; React.js</b> web platforms.
+            </p>
+            <a href="#experience" class="inline-flex items-center gap-2.5 mt-9 font-mono text-xs uppercase tracking-[0.14em] text-[#ffb100] hover:text-white transition-colors">
+              View experience <span>→</span>
+            </a>
+          </div>
+
+          <div class="lg:col-span-6">
+            <svg class="w-full max-h-[340px]" viewBox="0 0 460 340" fill="none" role="img" aria-label="Diagram: React, Python API, MongoDB and Salesforce">
+              <path class="draw" d="M120 60 H340 M120 60 V276 M340 60 V276 M120 276 H340" stroke="rgba(255,255,255,.14)" stroke-width="1" />
+              <path class="draw" d="M120 60 L340 276 M340 60 L120 276" stroke="rgba(255,255,255,.07)" stroke-width="1" />
+              <rect class="draw" x="104" y="44" width="32" height="32" rx="6" stroke="#FFB100" stroke-width="1" fill="#070708" />
+              <rect class="draw" x="324" y="44" width="32" height="32" rx="6" stroke="#FFB100" stroke-width="1" fill="#070708" />
+              <rect class="draw" x="104" y="260" width="32" height="32" rx="6" stroke="#FFB100" stroke-width="1" fill="#070708" />
+              <rect class="draw" x="324" y="260" width="32" height="32" rx="6" stroke="#FFB100" stroke-width="1" fill="#070708" />
+              <circle cx="120" cy="60" r="3" fill="#FFB100" />
+              <circle cx="340" cy="60" r="3" fill="#FFB100" />
+              <circle cx="120" cy="276" r="3" fill="#FFB100" />
+              <circle cx="340" cy="276" r="3" fill="#FFB100" />
+              <text x="104" y="26" fill="#fff" font-size="12" font-family="monospace" letter-spacing="1.5">UI / LWC</text>
+              <text x="324" y="26" fill="#fff" font-size="12" font-family="monospace" letter-spacing="1.5">API</text>
+              <text x="104" y="316" fill="#fff" font-size="12" font-family="monospace" letter-spacing="1.5">DATA</text>
+              <text x="324" y="316" fill="#fff" font-size="12" font-family="monospace" letter-spacing="1.5">CI/CD</text>
+              <text x="146" y="54" fill="#5A5A57" font-size="10" font-family="monospace">react.js</text>
+              <text x="366" y="54" fill="#5A5A57" font-size="10" font-family="monospace">fastapi</text>
+              <text x="146" y="298" fill="#5A5A57" font-size="10" font-family="monospace">soql / sql</text>
+              <text x="366" y="298" fill="#5A5A57" font-size="10" font-family="monospace">gearset</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         05 — SELECTED PROJECTS (Modular Hairline Grid)
+         ================================================================ -->
+    <section id="projects" class="border-t border-white/[0.08] px-[6vw] py-20 sm:py-24 reveal">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57] mb-3">05 — Selected Work</p>
+            <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] font-medium tracking-[-0.03em] leading-[1.05]">Projects &amp; Production Systems</h2>
+          </div>
+
+          <div class="flex flex-wrap gap-2" id="project-filters">
+            <button data-filter="all" class="filter-btn active px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-wider bg-[#ffb100] text-[#070708] font-medium cursor-pointer transition-all">All</button>
+            <button data-filter="salesforce" class="filter-btn px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-wider border border-white/[0.14] text-[#8a8a86] hover:text-white cursor-pointer transition-all">Salesforce &amp; AI</button>
+            <button data-filter="crm" class="filter-btn px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-wider border border-white/[0.14] text-[#8a8a86] hover:text-white cursor-pointer transition-all">CRM</button>
+            <button data-filter="fullstack" class="filter-btn px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-wider border border-white/[0.14] text-[#8a8a86] hover:text-white cursor-pointer transition-all">Python &amp; React</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Project 1 -->
+          <article class="project-card rounded-xl border border-white/[0.1] bg-white/[0.015] overflow-hidden flex flex-col hover:border-[#ffb100]/40 transition-colors" data-category="salesforce crm">
+            <div class="relative aspect-video bg-[#0c0c0e] border-b border-white/[0.08] overflow-hidden">
+              <img src="images/legend_motors.svg" alt="Agentforce WhatsApp Service Agent" class="w-full h-full object-cover opacity-90" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#070708]/85 border border-white/15 font-mono text-[10px] uppercase tracking-wider text-[#ffb100]">Agentforce · WhatsApp</span>
+              <div class="absolute bottom-2.5 right-2.5 flex bg-[#070708]/90 border border-white/15 rounded-full p-0.5 font-mono text-[10px] uppercase">
+                <button class="tab-btn active px-3 py-1 rounded-full bg-[#ffb100] text-[#070708] font-medium cursor-pointer" data-tab="overview">Impact</button>
+                <button class="tab-btn px-3 py-1 rounded-full text-[#8a8a86] hover:text-white cursor-pointer" data-tab="code">Apex</button>
               </div>
             </div>
-
-            <div class="project-content-container">
-              <div class="project-tab-content active" id="proj-bitrix-desc">
-                <h3 class="project-title">Real Estate CRM - Bitrix24</h3>
-                <div class="project-status-tag">
-                  <i class="fa-solid fa-clock-rotate-left"></i> Data model implemented; automation in progress
-                </div>
-                <div class="project-desc">
-                  <p>A customized real estate CRM solution designed to manage property listings, enquiries, matching workflows, and business operations using Bitrix24.</p>
-                  <ul>
-                    <li>Designed a comprehensive real estate CRM data model with custom entities, relationships, and layouts.</li>
-                    <li>Implemented property listing and enquiry management using Smart Process Automations (SPA).</li>
-                    <li>Developed listing search and matching functionality with custom Node.js and Express services.</li>
-                    <li>Built OAuth and webhook integrations, and explored Gemini-powered AI chatbot integration for automated lead generation.</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span class="badge badge-cyan">Bitrix24</span>
-                  <span class="badge badge-indigo">JavaScript</span>
-                  <span class="badge badge-emerald">Node.js</span>
-                  <span class="badge badge-purple">Express</span>
-                  <span class="badge badge-cyan">REST APIs</span>
-                  <span class="badge badge-indigo">OAuth</span>
-                  <span class="badge badge-purple">Google Gemini</span>
-                </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="tab-panel" data-panel="overview">
+                <h3 class="text-xl font-medium tracking-tight text-white mb-2">Agentforce WhatsApp Service Agent</h3>
+                <p class="text-sm text-[#8a8a86] leading-relaxed mb-4">
+                  Conversational AI agent covering routing, product discovery, inquiry handling, and test-drive booking directly in WhatsApp.
+                </p>
               </div>
+              <div class="tab-panel hidden" data-panel="code">
+                <h3 class="text-base font-medium text-white mb-2 font-mono">Invocable Action</h3>
+                <pre class="bg-[#050506] border border-white/[0.08] rounded-lg p-3 font-mono text-[11px] text-[#8a8a86] overflow-x-auto mb-4"><code>@InvocableMethod(label='Book Test Drive')
+public static List&lt;BookingResult&gt; createBooking(List&lt;BookingRequest&gt; reqs) {
+  return TestDriveService.schedule(reqs);
+}</code></pre>
+              </div>
+              <div class="mt-auto pt-4 border-t border-white/[0.08] flex items-center justify-between gap-3 font-mono text-[11px] text-[#5a5a57]">
+                <span>Agentforce · Flows · WhatsApp</span>
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="text-[#ffb100] hover:text-white transition-colors">GitHub →</a>
+              </div>
+            </div>
+          </article>
 
-              <div class="project-tab-content" id="proj-bitrix-code">
-                <h3 class="project-title">Listing Matcher Webhook</h3>
-                <pre class="project-snippet"><code>// Bitrix24 Real Estate Webhook & Node.js Integration
-app.post('/api/crm/property-match', async (req, res) => {
-  const { enquiryId, budget, propertyType } = req.body;
-  const listings = await bitrix.call('crm.item.list', {
-    entityTypeId: 1032, // Smart Process: Listings
-    filter: { 
-      '&lt;=PRICE': budget, 
-      '=PROPERTY_TYPE': propertyType, 
-      '=STATUS': 'AVAILABLE' 
-    }
-  });
-  return res.json({ matchedListings: listings });
+          <!-- Project 2 -->
+          <article class="project-card rounded-xl border border-white/[0.1] bg-white/[0.015] overflow-hidden flex flex-col hover:border-[#ffb100]/40 transition-colors" data-category="salesforce crm">
+            <div class="relative aspect-video bg-[#0c0c0e] border-b border-white/[0.08] overflow-hidden">
+              <img src="images/bespin_document_ai.svg" alt="Document AI Automation" class="w-full h-full object-cover opacity-90" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#070708]/85 border border-white/15 font-mono text-[10px] uppercase tracking-wider text-[#ffb100]">Document AI · Data Cloud</span>
+              <div class="absolute bottom-2.5 right-2.5 flex bg-[#070708]/90 border border-white/15 rounded-full p-0.5 font-mono text-[10px] uppercase">
+                <button class="tab-btn active px-3 py-1 rounded-full bg-[#ffb100] text-[#070708] font-medium cursor-pointer" data-tab="overview">Impact</button>
+                <button class="tab-btn px-3 py-1 rounded-full text-[#8a8a86] hover:text-white cursor-pointer" data-tab="code">Apex</button>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="tab-panel" data-panel="overview">
+                <h3 class="text-xl font-medium tracking-tight text-white mb-2">Document AI Automation</h3>
+                <p class="text-sm text-[#8a8a86] leading-relaxed mb-4">
+                  Automated PDF invoice &amp; quotation extraction using Document AI, Data Cloud, and Queueable/Batch Apex jobs that create Salesforce records.
+                </p>
+              </div>
+              <div class="tab-panel hidden" data-panel="code">
+                <h3 class="text-base font-medium text-white mb-2 font-mono">Queueable Processor</h3>
+                <pre class="bg-[#050506] border border-white/[0.08] rounded-lg p-3 font-mono text-[11px] text-[#8a8a86] overflow-x-auto mb-4"><code>public class DocumentAIQueueable implements Queueable, Database.AllowsCallouts {
+  public void execute(QueueableContext ctx) {
+    HttpResponse res = DocumentAIService.extractInvoice(this.fileId);
+    InvoiceMapper.upsertRecords(res.getBody());
+  }
+}</code></pre>
+              </div>
+              <div class="mt-auto pt-4 border-t border-white/[0.08] flex items-center justify-between gap-3 font-mono text-[11px] text-[#5a5a57]">
+                <span>Document AI · Data Cloud · Async Apex</span>
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="text-[#ffb100] hover:text-white transition-colors">GitHub →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card rounded-xl border border-white/[0.1] bg-white/[0.015] overflow-hidden flex flex-col hover:border-[#ffb100]/40 transition-colors" data-category="crm fullstack">
+            <div class="relative aspect-video bg-[#0c0c0e] border-b border-white/[0.08] overflow-hidden">
+              <img src="images/bitrix_crm.svg" alt="Bitrix24 Real Estate CRM" class="w-full h-full object-cover opacity-90" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#070708]/85 border border-white/15 font-mono text-[10px] uppercase tracking-wider text-[#ffb100]">Bitrix24 · Node.js</span>
+              <div class="absolute bottom-2.5 right-2.5 flex bg-[#070708]/90 border border-white/15 rounded-full p-0.5 font-mono text-[10px] uppercase">
+                <button class="tab-btn active px-3 py-1 rounded-full bg-[#ffb100] text-[#070708] font-medium cursor-pointer" data-tab="overview">Impact</button>
+                <button class="tab-btn px-3 py-1 rounded-full text-[#8a8a86] hover:text-white cursor-pointer" data-tab="code">API</button>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="tab-panel" data-panel="overview">
+                <h3 class="text-xl font-medium tracking-tight text-white mb-2">Bitrix24 Real Estate CRM</h3>
+                <p class="text-sm text-[#8a8a86] leading-relaxed mb-4">
+                  Relational Real Estate CRM data model with Smart Process Automations (SPA), OAuth webhooks, and Express property matching.
+                </p>
+              </div>
+              <div class="tab-panel hidden" data-panel="code">
+                <h3 class="text-base font-medium text-white mb-2 font-mono">Matcher Webhook</h3>
+                <pre class="bg-[#050506] border border-white/[0.08] rounded-lg p-3 font-mono text-[11px] text-[#8a8a86] overflow-x-auto mb-4"><code>app.post('/api/crm/property-match', async (req, res) =&gt; {
+  const { budget, propertyType } = req.body;
+  const listings = await bitrix.call('crm.item.list', { entityTypeId: 1032 });
+  res.json({ matchedListings: listings });
 });</code></pre>
-                <div class="project-tags">
-                  <span class="badge badge-cyan">Bitrix24 SPA</span>
-                  <span class="badge badge-emerald">Node.js Express</span>
-                  <span class="badge badge-purple">OAuth Webhook</span>
-                </div>
               </div>
+              <div class="mt-auto pt-4 border-t border-white/[0.08] flex items-center justify-between gap-3 font-mono text-[11px] text-[#5a5a57]">
+                <span>Bitrix24 · Node.js · Gemini API</span>
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="text-[#ffb100] hover:text-white transition-colors">GitHub →</a>
+              </div>
+            </div>
+          </article>
 
-              <div class="project-links">
-                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                    class="fa-brands fa-github"></i> Repository</a>
+          <!-- Project 4 -->
+          <article class="project-card rounded-xl border border-white/[0.1] bg-white/[0.015] overflow-hidden flex flex-col hover:border-[#ffb100]/40 transition-colors" data-category="fullstack">
+            <div class="relative aspect-video bg-[#0c0c0e] border-b border-white/[0.08] overflow-hidden">
+              <img src="images/healthrack.png" alt="HealthRack Platform" class="w-full h-full object-cover opacity-90" />
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#070708]/85 border border-white/15 font-mono text-[10px] uppercase tracking-wider text-[#ffb100]">React · Flask · ML</span>
+              <div class="absolute bottom-2.5 right-2.5 flex bg-[#070708]/90 border border-white/15 rounded-full p-0.5 font-mono text-[10px] uppercase">
+                <button class="tab-btn active px-3 py-1 rounded-full bg-[#ffb100] text-[#070708] font-medium cursor-pointer" data-tab="overview">Impact</button>
+                <button class="tab-btn px-3 py-1 rounded-full text-[#8a8a86] hover:text-white cursor-pointer" data-tab="code">Python</button>
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="tab-panel" data-panel="overview">
+                <h3 class="text-xl font-medium tracking-tight text-white mb-2">HealthRack — ML Healthcare Platform</h3>
+                <p class="text-sm text-[#8a8a86] leading-relaxed mb-4">
+                  Full-stack healthcare platform built with React.js, Flask REST APIs, MongoDB, JWT authentication, and ML-based recommendations.
+                </p>
+              </div>
+              <div class="tab-panel hidden" data-panel="code">
+                <h3 class="text-base font-medium text-white mb-2 font-mono">Flask ML Route</h3>
+                <pre class="bg-[#050506] border border-white/[0.08] rounded-lg p-3 font-mono text-[11px] text-[#8a8a86] overflow-x-auto mb-4"><code>@app.route('/api/recommend', methods=['POST'])
+@jwt_required()
+def recommend():
+    return jsonify({'result': ml_model.predict([request.json['vector']]).tolist()})</code></pre>
+              </div>
+              <div class="mt-auto pt-4 border-t border-white/[0.08] flex items-center justify-between gap-3 font-mono text-[11px] text-[#5a5a57]">
+                <span>React · Flask · MongoDB · JWT</span>
+                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="text-[#ffb100] hover:text-white transition-colors">GitHub →</a>
               </div>
             </div>
           </article>
         </div>
-
-        <!-- Showcase 2: Bespin Document AI -->
-        <div class="horizontal-card-slide">
-          <article class="project-card glass-panel project-card-indigo" data-category="crm ai">
-            <div class="card-glare"></div>
-            <div class="project-image-wrapper">
-              <img src="images/bespin_document_ai.svg" alt="Bespin Document AI Preview" class="project-img">
-              <div class="project-badge-overlay">
-                <span class="badge badge-indigo"><i class="fa-solid fa-file-invoice"></i> Salesforce / Document AI</span>
-              </div>
-              <div class="project-tech-tabs">
-                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-                <button class="project-tab-trigger" data-proj-tab="code">Queueable Apex</button>
-              </div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-tab-content active" id="proj-bespin-desc">
-                <h3 class="project-title">Bespin - Document AI &amp; Invoice Processing</h3>
-                <div class="project-desc">
-                  <p>An automated Salesforce document processing solution for handling invoice and credit note documents received through email and CRM cases.</p>
-                  <ul>
-                    <li>Implemented Email-to-Case-based document ingestion and automated routing for PDF and CSV files.</li>
-                    <li>Built high-throughput asynchronous processing using Queueable Apex and Batch Apex.</li>
-                    <li>Integrated external document processing services securely via Named Credentials and Apex callouts.</li>
-                    <li>Engineered robust error handling, invoice status tracking, reconciliation, and automated deployment.</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span class="badge badge-indigo">Salesforce</span>
-                  <span class="badge badge-cyan">Apex</span>
-                  <span class="badge badge-purple">Queueable Apex</span>
-                  <span class="badge badge-purple">Batch Apex</span>
-                  <span class="badge badge-emerald">Document AI</span>
-                  <span class="badge badge-cyan">Email-to-Case</span>
-                  <span class="badge badge-indigo">Named Credentials</span>
-                </div>
-              </div>
-
-              <div class="project-tab-content" id="proj-bespin-code">
-                <h3 class="project-title">Async Queueable Processor</h3>
-                <pre class="project-snippet"><code>// Asynchronous Document Ingestion via Queueable Apex
-public class InvoiceDocumentProcessor implements Queueable, Database.AllowsCallouts {
-  private Id caseId;
-  public void execute(QueueableContext context) {
-    HttpRequest req = new HttpRequest();
-    req.setEndpoint('callout:Document_AI_Endpoint/v1/extract');
-    req.setMethod('POST');
-    // Process PDF / CSV & route records
-    HttpResponse res = new Http().send(req);
-    CaseService.updateInvoiceStatus(caseId, res.getBody());
-  }
-}</code></pre>
-                <div class="project-tags">
-                  <span class="badge badge-indigo">Apex Callout</span>
-                  <span class="badge badge-cyan">Named Credentials</span>
-                </div>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                    class="fa-brands fa-github"></i> Repository</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Showcase 3: Legend Motors -->
-        <div class="horizontal-card-slide">
-          <article class="project-card glass-panel project-card-emerald" data-category="crm ai">
-            <div class="card-glare"></div>
-            <div class="project-image-wrapper">
-              <img src="images/legend_motors.svg" alt="Legend Motors Agentforce Preview" class="project-img">
-              <div class="project-badge-overlay">
-                <span class="badge badge-emerald"><i class="fa-solid fa-robot"></i> Agentforce / AI Agent</span>
-              </div>
-              <div class="project-tech-tabs">
-                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-                <button class="project-tab-trigger" data-proj-tab="code">Agent Action</button>
-              </div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-tab-content active" id="proj-legend-desc">
-                <h3 class="project-title">Legend Motors - WhatsApp Service Agent</h3>
-                <div class="project-desc">
-                  <p>An AI-powered automotive service agent designed to guide customers through vehicle discovery and test-drive booking.</p>
-                  <ul>
-                    <li>Built conversational customer interaction workflows using Salesforce Agentforce topics and instructions.</li>
-                    <li>Implemented intelligent vehicle discovery, model comparison, and showroom selection.</li>
-                    <li>Configured automated test-drive scheduling, booking confirmations, and human handoff workflows.</li>
-                    <li>Integrated Salesforce automation with WhatsApp-based customer engagement.</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span class="badge badge-emerald">Salesforce Agentforce</span>
-                  <span class="badge badge-cyan">Salesforce Flows</span>
-                  <span class="badge badge-indigo">WhatsApp</span>
-                  <span class="badge badge-purple">CRM</span>
-                  <span class="badge badge-emerald">AI Agents</span>
-                </div>
-              </div>
-
-              <div class="project-tab-content" id="proj-legend-code">
-                <h3 class="project-title">Agentforce Invocable Action</h3>
-                <pre class="project-snippet"><code>// Agentforce Vehicle Discovery & Test-Drive Action
-public with sharing class VehicleBookingAction {
-  @InvocableMethod(label='Schedule Test Drive' description='Books test drive via Agentforce')
-  public static List&lt;BookingResult&gt; scheduleTestDrive(List&lt;BookingRequest&gt; requests) {
-    List&lt;BookingResult&gt; results = new List&lt;BookingResult&gt;();
-    for (BookingRequest req : requests) {
-      Id bookingId = BookingService.createAppointment(req.modelId, req.showroom, req.preferredTime);
-      results.add(new BookingResult(bookingId, 'Confirmed'));
-    }
-    return results;
-  }
-}</code></pre>
-                <div class="project-tags">
-                  <span class="badge badge-emerald">Invocable Method</span>
-                  <span class="badge badge-cyan">Salesforce Flow Action</span>
-                </div>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                    class="fa-brands fa-github"></i> Repository</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Showcase 4: Winchy -->
-        <div class="horizontal-card-slide">
-          <article class="project-card glass-panel project-card-purple" data-category="crm ai">
-            <div class="card-glare"></div>
-            <div class="project-image-wrapper">
-              <img src="images/winchy_automation.svg" alt="Winchy Business AI Preview" class="project-img">
-              <div class="project-badge-overlay">
-                <span class="badge badge-purple"><i class="fa-solid fa-wand-magic-sparkles"></i> Prompt Builder / AI</span>
-              </div>
-              <div class="project-tech-tabs">
-                <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-                <button class="project-tab-trigger" data-proj-tab="code">Prompt Builder</button>
-              </div>
-            </div>
-
-            <div class="project-content-container">
-              <div class="project-tab-content active" id="proj-winchy-desc">
-                <h3 class="project-title">Winchy - AI-Powered Business Automation</h3>
-                <div class="project-desc">
-                  <p>A collection of Salesforce AI and automation solutions for customer service, employee assistance, inventory operations, and quotation generation.</p>
-                  <ul>
-                    <li>Developed conversational AI-powered employee and customer service agent experiences.</li>
-                    <li>Implemented lead creation and inventory management workflows using Salesforce Flows.</li>
-                    <li>Worked on AI-assisted quotation generation using Salesforce Prompt Builder.</li>
-                    <li>Implemented PDF-based information extraction and automated record updates.</li>
-                  </ul>
-                </div>
-                <div class="project-tags">
-                  <span class="badge badge-indigo">Salesforce</span>
-                  <span class="badge badge-purple">Agentforce</span>
-                  <span class="badge badge-cyan">Apex</span>
-                  <span class="badge badge-emerald">Salesforce Flows</span>
-                  <span class="badge badge-purple">Prompt Builder</span>
-                </div>
-              </div>
-
-              <div class="project-tab-content" id="proj-winchy-code">
-                <h3 class="project-title">Prompt Builder Quotation</h3>
-                <pre class="project-snippet"><code>// Prompt Builder AI Quotation Generation Integration
-public class WinchyQuotationService {
-  public static String generateIntelligentQuotation(Id opportunityId) {
-    ConnectApi.EinsteinPromptTemplateGenerationsInput promptInput = 
-      new ConnectApi.EinsteinPromptTemplateGenerationsInput();
-    promptInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
-    return ConnectApi.EinsteinLLM.generateMessages(promptInput).generations[0].text;
-  }
-}</code></pre>
-                <div class="project-tags">
-                  <span class="badge badge-purple">Prompt Builder</span>
-                  <span class="badge badge-indigo">Einstein LLM</span>
-                </div>
-              </div>
-
-              <div class="project-links">
-                <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                    class="fa-brands fa-github"></i> Repository</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <!-- ================================================================
-       Other Notable Projects Section (Interactive Filter Grid)
-       ================================================================ -->
-  <section id="projects" class="scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">&lt;Portfolio /&gt;</span>
-      <h2 class="section-title skew-target">Application &amp; Research Portfolio</h2>
-    </div>
-
-    <!-- Filter Buttons -->
-    <div class="project-filters">
-      <button class="filter-btn magnetic-target active" data-filter="all">All Projects</button>
-      <button class="filter-btn magnetic-target" data-filter="crm">Salesforce &amp; CRM</button>
-      <button class="filter-btn magnetic-target" data-filter="ai">AI &amp; Automation</button>
-      <button class="filter-btn magnetic-target" data-filter="web">Full-Stack Web</button>
-    </div>
-
-    <!-- Grid of Projects -->
-    <div class="projects-grid">
-
-      <!-- Project 5: AI Resume Analyzer -->
-      <article class="project-card glass-panel project-card-emerald" data-category="ai web">
-        <div class="card-glare"></div>
-        <div class="project-image-wrapper">
-          <img src="images/resume_analyzer.png" alt="AI Resume Analyzer Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-emerald"><i class="fa-solid fa-brain"></i> AI / Full-Stack</span>
+    <!-- ================================================================
+         06 — EXPERIENCE & SKILLS
+         ================================================================ -->
+    <section id="experience" class="border-t border-white/[0.08] px-[6vw] py-20 sm:py-24 reveal">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57] mb-3">06 — Experience</p>
+            <h2 class="text-[clamp(1.9rem,3.4vw,2.75rem)] font-medium tracking-[-0.03em] leading-[1.05]">Career &amp; Education</h2>
           </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">RAG Architecture</button>
-          </div>
-        </div>
 
-        <div class="project-content-container">
-          <div class="project-tab-content active" id="proj-resume-desc">
-            <h3 class="project-title">AI Resume Analyzer</h3>
-            <div class="project-desc">
-              <p>An AI-powered platform for analyzing resumes and extracting meaningful insights using LLM-based processing.</p>
-              <ul>
-                <li>Integrated RAG pipelines for semantic data retrieval against job criteria.</li>
-                <li>Generates automated compatibility ratings and skills gap analysis.</li>
-                <li>Implemented using FastAPI to handle high concurrency.</li>
+          <div class="divide-y divide-white/[0.08] border-y border-white/[0.08]">
+            <div class="py-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <h3 class="text-lg font-medium text-white">Salesforce Developer <span class="text-[#8a8a86] font-normal">— Cloud Science Labs</span></h3>
+                <span class="font-mono text-xs text-[#ffb100]">Present</span>
+              </div>
+              <ul class="space-y-1.5 text-sm text-[#8a8a86]">
+                <li>• Translated customer discovery, inquiry handling, lead capture &amp; service requests into Agentforce Service Agents and WhatsApp workflows.</li>
+                <li>• Automated invoice &amp; quotation processing with Document AI, Queueable/Batch Apex, and Data Cloud.</li>
+                <li>• Built Reports &amp; Dashboards; configured Omnichannel, Web-to-Case, and Email-to-Case routing.</li>
+                <li>• Designed Permission Set Groups for role-based access and validated deployments using Git and Gearset.</li>
               </ul>
             </div>
-            <div class="project-tags">
-              <span class="badge badge-indigo">Python</span>
-              <span class="badge badge-cyan">FastAPI</span>
-              <span class="badge badge-cyan">React</span>
-              <span class="badge badge-indigo">MongoDB</span>
-              <span class="badge badge-emerald">OpenAI API</span>
-              <span class="badge badge-purple">RAG</span>
-              <span class="badge badge-emerald">Pinecone</span>
-            </div>
-          </div>
 
-          <div class="project-tab-content" id="proj-resume-code">
-            <h3 class="project-title">RAG Retrieval Pipeline</h3>
-            <pre class="project-snippet"><code># RAG Retrieval & Prompt Formulation
-async def analyze_candidate(resume_text, job_desc):
-    vector_store = PineconeStore()
-    docs = await vector_store.similarity_search(query=job_desc, k=3)
-    context = "\n".join([d.text for d in docs])
-    prompt = f"Compare resume with job:\n{context}\nResume: {resume_text}"
-    return await llm.generate(prompt)</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-emerald">Vector Database</span>
-              <span class="badge badge-cyan">FastAPI Endpoint</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417/ai-resume-analyzer" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                class="fa-brands fa-github"></i> Repository</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 6: Real-Time Chat Application -->
-      <article class="project-card glass-panel project-card-cyan" data-category="web">
-        <div class="card-glare"></div>
-        <div class="project-image-wrapper">
-          <img src="images/chat_app.png" alt="Real-Time Chat App Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-cyan"><i class="fa-solid fa-bolt"></i> Socket IO</span>
-          </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">Socket Controller</button>
-          </div>
-        </div>
-
-        <div class="project-content-container">
-          <div class="project-tab-content active" id="proj-chat-desc">
-            <h3 class="project-title">Real-Time Chat Application</h3>
-            <div class="project-desc">
-              <p>A real-time messaging application with authenticated users and WebSocket-based communication.</p>
-              <ul>
-                <li>Engineered with React hooks and event-driven Socket.io links.</li>
-                <li>Utilizes JSON Web Tokens (JWT) for secure authentication.</li>
-                <li>MongoDB backend for message logging and status updates.</li>
+            <div class="py-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <h3 class="text-lg font-medium text-white">IT Admin <span class="text-[#8a8a86] font-normal">— Saptam Decor Pvt. Ltd.</span></h3>
+                <span class="font-mono text-xs text-[#5a5a57]">08/2025 – 01/2026</span>
+              </div>
+              <ul class="space-y-1.5 text-sm text-[#8a8a86]">
+                <li>• Day-to-day support and troubleshooting for company systems, network devices, hardware, and software.</li>
+                <li>• Coordinated issue resolution across users and vendors to keep operations running.</li>
               </ul>
             </div>
-            <div class="project-tags">
-              <span class="badge badge-cyan">Flask</span>
-              <span class="badge badge-cyan">React</span>
-              <span class="badge badge-indigo">MongoDB</span>
-              <span class="badge badge-purple">WebSockets</span>
-              <span class="badge badge-cyan">Socket.io</span>
-              <span class="badge badge-indigo">JWT</span>
-            </div>
-          </div>
 
-          <div class="project-tab-content" id="proj-chat-code">
-            <h3 class="project-title">WebSocket Listener</h3>
-            <pre class="project-snippet"><code># Socket.io message controller
-@socketio.on('send_message')
-@jwt_required_socket()
-def handle_message(data):
-    sender = get_jwt_identity()
-    new_message = {'sender': sender, 'room': data['room_id'], 'text': data['message']}
-    db.messages.insert_one(new_message)
-    emit('receive_message', new_message, room=data['room_id'])</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-cyan">Flask SocketIO</span>
-              <span class="badge badge-indigo">JWT Security</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417/-Real-Time-Chat-Application" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                class="fa-brands fa-github"></i> Repository</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 7: Doctor Recommendation Chatbot -->
-      <article class="project-card glass-panel project-card-purple" data-category="ai web">
-        <div class="card-glare"></div>
-        <div class="project-image-wrapper">
-          <img src="images/healthcare_assistant.png" alt="Doctor Recommendation Chatbot Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-purple"><i class="fa-solid fa-user-doctor"></i> AI Agent</span>
-          </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">Chatbot API</button>
-          </div>
-        </div>
-
-        <div class="project-content-container">
-          <div class="project-tab-content active" id="proj-health-assist-desc">
-            <h3 class="project-title">Doctor Recommendation Chatbot</h3>
-            <div class="project-desc">
-              <p>An AI-powered chatbot designed to assist users with doctor recommendations through conversational interaction.</p>
-              <ul>
-                <li>Engineered an AI agent using the SambaNova LLM API.</li>
-                <li>Integrated MongoDB Atlas for storing doctor profiles.</li>
-                <li>Designed a robust offline fallback mechanism.</li>
+            <div class="py-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+                <h3 class="text-lg font-medium text-white">Front-End Developer Intern <span class="text-[#8a8a86] font-normal">— MAKEMAYA Pvt. Ltd.</span></h3>
+                <span class="font-mono text-xs text-[#5a5a57]">07/2024 – 09/2024</span>
+              </div>
+              <ul class="space-y-1.5 text-sm text-[#8a8a86]">
+                <li>• Built responsive React.js UI components and integrated REST APIs to meet product requirements.</li>
+                <li>• Improved front-end performance and collaborated with the team on delivery.</li>
               </ul>
             </div>
-            <div class="project-tags">
-              <span class="badge badge-indigo">Flask</span>
-              <span class="badge badge-cyan">React</span>
-              <span class="badge badge-emerald">MongoDB Atlas</span>
-              <span class="badge badge-purple">SambaNova API</span>
-            </div>
-          </div>
 
-          <div class="project-tab-content" id="proj-health-assist-code">
-            <h3 class="project-title">Health Chatbot Endpoint</h3>
-            <pre class="project-snippet"><code># Symptom-based health chatbot agent
-@app.route('/api/chat', methods=['POST'])
-@limiter.limit("10 per minute")
-def health_agent():
-    symptoms = extract_symptoms(request.json.get('message'))
-    prompt = f"Analyze symptoms: {symptoms}. Provide non-diagnostic guidance."
-    response = llm.generate_response(prompt)
-    specialty = predict_specialty(symptoms)
-    doctors = db.doctors.find({"specialty": specialty}).limit(3)
-    return jsonify(guidance=response, recommendations=list(doctors))</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-indigo">Flask Routing</span>
-              <span class="badge badge-purple">LLM Prompting</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417/DR_Recomendation_system_chatbot" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                class="fa-brands fa-github"></i> Repository</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 8: HealthRack -->
-      <article class="project-card glass-panel project-card-indigo" data-category="web">
-        <div class="card-glare"></div>
-        <div class="project-image-wrapper">
-          <img src="images/healthrack.png" alt="HealthRack App Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-indigo"><i class="fa-solid fa-heart-pulse"></i> Full-Stack</span>
-          </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">Recommendation Logic</button>
-          </div>
-        </div>
-
-        <div class="project-content-container">
-          <div class="project-tab-content active" id="proj-health-desc">
-            <h3 class="project-title">HealthRack</h3>
-            <div class="project-desc">
-              <p>A healthcare management platform with structured workflows, authentication, and backend integration.</p>
-              <ul>
-                <li>Customized recommendation algorithm adjusting to fitness levels.</li>
-                <li>Google OAuth integration for seamless, secure user sign-ups.</li>
-                <li>Highly optimized MongoDB query profiles for workout logs.</li>
-              </ul>
-            </div>
-            <div class="project-tags">
-              <span class="badge badge-cyan">Flask</span>
-              <span class="badge badge-cyan">React</span>
-              <span class="badge badge-indigo">MongoDB</span>
-              <span class="badge badge-purple">Google OAuth</span>
-            </div>
-          </div>
-
-          <div class="project-tab-content" id="proj-health-code">
-            <h3 class="project-title">OAuth &amp; Recommendation API</h3>
-            <pre class="project-snippet"><code># Google Auth Callback validation
-@auth.route('/callback')
-def auth_callback():
-    token = oauth.google.authorize_access_token()
-    user_info = oauth.google.userinfo()
-    rec = db.workouts.aggregate([
-        {'$match': {'level': user_info['pref_level']}},
-        {'$sample': {'size': 5}}
-    ])
-    return jsonify(workouts=list(rec))</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-indigo">Aggregation Pipeline</span>
-              <span class="badge badge-purple">OAuth 2.0</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                class="fa-brands fa-github"></i> Repository</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 9: Patient Portal -->
-      <article class="project-card glass-panel project-card-rose" data-category="web">
-        <div class="card-glare"></div>
-        <div class="project-image-wrapper">
-          <img src="images/patient_portal.png" alt="Patient Portal Assignment Preview" class="project-img">
-          <div class="project-badge-overlay">
-            <span class="badge badge-rose"><i class="fa-solid fa-hospital-user"></i> Full-Stack</span>
-          </div>
-          <div class="project-tech-tabs">
-            <button class="project-tab-trigger active" data-proj-tab="desc">Overview</button>
-            <button class="project-tab-trigger" data-proj-tab="code">Portal API</button>
-          </div>
-        </div>
-
-        <div class="project-content-container">
-          <div class="project-tab-content active" id="proj-patient-portal-desc">
-            <h3 class="project-title">Patient Portal</h3>
-            <div class="project-desc">
-              <p>A web-based patient portal developed using a modern React and Node.js stack for appointments and diagnostics.</p>
-              <ul>
-                <li>Implemented secure patient and doctor authentication workflows.</li>
-                <li>Created dynamic dashboards for medical records and booking management.</li>
-                <li>Designed optimized database structures for quick history retrieval.</li>
-              </ul>
-            </div>
-            <div class="project-tags">
-              <span class="badge badge-indigo">React</span>
-              <span class="badge badge-cyan">Node.js</span>
-              <span class="badge badge-emerald">MongoDB</span>
-              <span class="badge badge-purple">Express</span>
-            </div>
-          </div>
-
-          <div class="project-tab-content" id="proj-patient-portal-code">
-            <h3 class="project-title">Portal API Endpoint</h3>
-            <pre class="project-snippet"><code>// Patient medical records retrieval API
-app.get('/api/patient/records', authenticateToken, async (req, res) => {
-  try {
-    const patientId = req.user.id;
-    const records = await db.collection('medical_records')
-      .find({ patientId: ObjectId(patientId) })
-      .sort({ date: -1 })
-      .toArray();
-    res.json({ success: true, records });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to retrieve records' });
-  }
-});</code></pre>
-            <div class="project-tags">
-              <span class="badge badge-cyan">Express Routing</span>
-              <span class="badge badge-indigo">Token Auth</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/redcoder7417/Patient-portal-assiment" target="_blank" rel="noopener" class="project-link-btn magnetic-target"><i
-                class="fa-brands fa-github"></i> Repository</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ================================================================
-       Skills Section
-       ================================================================ -->
-  <section id="skills" class="scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">&lt;Skills /&gt;</span>
-      <h2 class="section-title skew-target">Technical Expertise Matrix</h2>
-    </div>
-
-    <div class="skills-container">
-
-      <!-- 1. Salesforce Skills -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-brands fa-salesforce"></i> Salesforce Development</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Apex &amp; Async Processing (Queueable/Batch)</span>
-              <span class="skill-pct">95%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="95%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Lightning Web Components (LWC)</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Salesforce Flows &amp; Platform Automation</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
+            <div class="py-6">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="text-lg font-medium text-white">B.Tech, Computer Science &amp; Engineering <span class="text-[#8a8a86] font-normal">— IMS Engineering College</span></h3>
+                <span class="font-mono text-xs text-[#5a5a57]">10/2021 – 07/2025 · Ghaziabad</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">Salesforce CRM</span>
-          <span class="skill-tag-pill magnetic-target">Apex</span>
-          <span class="skill-tag-pill magnetic-target">LWC</span>
-          <span class="skill-tag-pill magnetic-target">Salesforce Flows</span>
-          <span class="skill-tag-pill magnetic-target">Agentforce</span>
-          <span class="skill-tag-pill magnetic-target">Prompt Builder</span>
-          <span class="skill-tag-pill magnetic-target">Document AI</span>
-          <span class="skill-tag-pill magnetic-target">Queueable Apex</span>
-          <span class="skill-tag-pill magnetic-target">Batch Apex</span>
-          <span class="skill-tag-pill magnetic-target">Email-to-Case</span>
-          <span class="skill-tag-pill magnetic-target">Omni-Channel</span>
-          <span class="skill-tag-pill magnetic-target">Reports &amp; Dashboards</span>
-          <span class="skill-tag-pill magnetic-target">Lightning App Builder</span>
-          <span class="skill-tag-pill magnetic-target">Gearset</span>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57] mb-3">Core Stack</p>
+            <h2 class="text-[clamp(1.9rem,3.4vw,2.75rem)] font-medium tracking-[-0.03em] leading-[1.05]">Skills</h2>
+          </div>
+
+          <div class="rounded-xl border border-white/[0.1] bg-white/[0.015] p-6 space-y-4">
+            <div>
+              <div class="flex justify-between text-xs mb-1.5"><span class="text-white">Salesforce, Apex, LWC &amp; Flows</span><span class="font-mono text-[#ffb100]">95%</span></div>
+              <div class="h-1 bg-white/[0.08] rounded-full overflow-hidden"><div class="skill-fill h-full bg-[#ffb100]" data-pct="95%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1.5"><span class="text-white">Agentforce, Document AI &amp; Data Cloud</span><span class="font-mono text-[#ffb100]">92%</span></div>
+              <div class="h-1 bg-white/[0.08] rounded-full overflow-hidden"><div class="skill-fill h-full bg-[#ffb100]" data-pct="92%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1.5"><span class="text-white">Python (FastAPI, Flask, Django)</span><span class="font-mono text-[#ffb100]">88%</span></div>
+              <div class="h-1 bg-white/[0.08] rounded-full overflow-hidden"><div class="skill-fill h-full bg-[#ffb100]" data-pct="88%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1.5"><span class="text-white">JavaScript, React.js &amp; Node.js</span><span class="font-mono text-[#ffb100]">86%</span></div>
+              <div class="h-1 bg-white/[0.08] rounded-full overflow-hidden"><div class="skill-fill h-full bg-[#ffb100]" data-pct="86%"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1.5"><span class="text-white">SOQL, SQL, MongoDB &amp; Gearset</span><span class="font-mono text-[#ffb100]">88%</span></div>
+              <div class="h-1 bg-white/[0.08] rounded-full overflow-hidden"><div class="skill-fill h-full bg-[#ffb100]" data-pct="88%"></div></div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-white/[0.1] bg-white/[0.015] p-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.14em] text-[#5a5a57] mb-3">Business &amp; Delivery</p>
+            <p class="text-xs text-[#8a8a86] leading-relaxed">
+              Requirement-to-solution mapping · Data model design · Solution documentation · Reports &amp; Dashboards · Functional validation · Git &amp; Gearset · Postman · Stakeholder demos
+            </p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- 2. CRM Engineering -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-network-wired"></i> CRM Architecture &amp; Automation</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Bitrix24 CRM Architecture &amp; Entities</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
+    <!-- ================================================================
+         07 — CONTACT (Signature Levo Terminal CTA + Web3Forms)
+         ================================================================ -->
+    <section id="contact" class="relative border-t border-white/[0.08] px-[6vw] py-24 sm:py-28 overflow-hidden reveal">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0" style="background: radial-gradient(58% 46% at 50% 60%, rgba(255,177,0,0.09), rgba(255,177,0,0) 72%);"></div>
+
+      <div class="max-w-7xl mx-auto relative">
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-[#5a5a57] mb-8">07 — Contact</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-6 space-y-6">
+            <a href="mailto:harsh77rajvanshi@gmail.com" class="font-mono text-[clamp(1.4rem,5.2vw,4.4rem)] font-normal tracking-[-0.02em] text-white hover:text-[#ffb100] transition-colors inline-flex items-center gap-[0.35em] flex-wrap">
+              <span class="text-[#ffb100]">&gt;</span>
+              <span>talk to an engineer_</span>
+              <span class="inline-block w-[0.5em] h-[1em] bg-[#ffb100] levo-cursor"></span>
+            </a>
+
+            <p class="text-sm text-[#8a8a86] max-w-[44ch] leading-relaxed">
+              Reply within one working day, directly from the engineer who writes the code.
+            </p>
+
+            <div class="space-y-3 pt-2 font-mono text-sm">
+              <div class="flex items-center gap-3 flex-wrap">
+                <a href="mailto:harsh77rajvanshi@gmail.com" class="text-[#ffb100] hover:text-white border-b border-[#ffb100]/30 hover:border-white/50 pb-0.5 transition-colors">
+                  harsh77rajvanshi@gmail.com
+                </a>
+                <button id="copy-email-btn" class="px-2.5 py-0.5 rounded-full border border-white/15 text-[11px] text-[#8a8a86] hover:text-white cursor-pointer">Copy</button>
+              </div>
+              <p class="text-[#8a8a86]">+91-7417785067 · Noida, Uttar Pradesh</p>
             </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Smart Process Automation (SPA) &amp; Pipelines</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
+
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl border border-white/[0.12] bg-[#070708]/90 p-6 sm:p-8">
+              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="dc3c4923-ae10-42f9-a08d-059a7196b40c" />
+                <input type="checkbox" name="botcheck" style="display: none;" />
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="form-name" class="block font-mono text-[11px] uppercase tracking-wider text-[#8a8a86] mb-1.5">Name</label>
+                    <input type="text" id="form-name" name="name" placeholder="Your Name" required class="w-full rounded-lg bg-white/[0.03] border border-white/[0.12] px-4 py-3 text-sm text-white placeholder-[#5a5a57] focus:outline-none focus:border-[#ffb100] transition-colors" />
+                  </div>
+                  <div>
+                    <label for="form-email" class="block font-mono text-[11px] uppercase tracking-wider text-[#8a8a86] mb-1.5">Email</label>
+                    <input type="email" id="form-email" name="email" placeholder="name@company.com" required class="w-full rounded-lg bg-white/[0.03] border border-white/[0.12] px-4 py-3 text-sm text-white placeholder-[#5a5a57] focus:outline-none focus:border-[#ffb100] transition-colors" />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="form-subject" class="block font-mono text-[11px] uppercase tracking-wider text-[#8a8a86] mb-1.5">Subject</label>
+                  <input type="text" id="form-subject" name="subject" placeholder="Role or project inquiry" required class="w-full rounded-lg bg-white/[0.03] border border-white/[0.12] px-4 py-3 text-sm text-white placeholder-[#5a5a57] focus:outline-none focus:border-[#ffb100] transition-colors" />
+                </div>
+
+                <div>
+                  <label for="form-message" class="block font-mono text-[11px] uppercase tracking-wider text-[#8a8a86] mb-1.5">Message</label>
+                  <textarea id="form-message" name="message" rows="4" placeholder="Tell me about your team or project..." required class="w-full rounded-lg bg-white/[0.03] border border-white/[0.12] px-4 py-3 text-sm text-white placeholder-[#5a5a57] focus:outline-none focus:border-[#ffb100] transition-colors resize-y"></textarea>
+                </div>
+
+                <button type="submit" class="w-full h-12 rounded-full bg-[#ffb100] hover:bg-[#ffc740] text-[#070708] text-sm font-medium transition-all hover:-translate-y-0.5 cursor-pointer">
+                  Send Message →
+                </button>
+              </form>
+
+              <div id="form-success-overlay" class="hidden absolute inset-0 bg-[#070708]/95 backdrop-blur-xl rounded-xl flex-col items-center justify-center text-center p-8 z-10">
+                <span class="w-12 h-12 rounded-full border border-[#ffb100] text-[#ffb100] flex items-center justify-center text-lg mb-4">✓</span>
+                <h3 class="text-xl font-medium text-white mb-2">Message received.</h3>
+                <p class="text-sm text-[#8a8a86] max-w-xs mb-6">Delivered to my inbox. I'll reply within one working day.</p>
+                <button id="success-reset-btn" class="px-5 py-2 rounded-full border border-white/15 font-mono text-xs text-white hover:border-[#ffb100] cursor-pointer">
+                  Send another
+                </button>
+              </div>
             </div>
           </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">CRM Webhooks, OAuth &amp; WhatsApp Integration</span>
-              <span class="skill-pct">88%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="88%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">Bitrix24</span>
-          <span class="skill-tag-pill magnetic-target">CRM Architecture</span>
-          <span class="skill-tag-pill magnetic-target">Smart Process Automation</span>
-          <span class="skill-tag-pill magnetic-target">CRM Customization</span>
-          <span class="skill-tag-pill magnetic-target">Business Process Automation</span>
-          <span class="skill-tag-pill magnetic-target">CRM Pipelines</span>
-          <span class="skill-tag-pill magnetic-target">Lead Management</span>
-          <span class="skill-tag-pill magnetic-target">Webhooks</span>
-          <span class="skill-tag-pill magnetic-target">OAuth 2.0</span>
-          <span class="skill-tag-pill magnetic-target">WhatsApp Integration</span>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- 3. AI & Intelligent Systems -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-robot"></i> AI &amp; Intelligent Agents</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Salesforce Agentforce &amp; Conversational AI</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">LLM Integration &amp; Google Gemini API</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">RAG Pipelines &amp; Vector Databases</span>
-              <span class="skill-pct">86%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="86%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">Agentforce</span>
-          <span class="skill-tag-pill magnetic-target">AI Agents</span>
-          <span class="skill-tag-pill magnetic-target">Google Gemini API</span>
-          <span class="skill-tag-pill magnetic-target">OpenAI API</span>
-          <span class="skill-tag-pill magnetic-target">LLM Integration</span>
-          <span class="skill-tag-pill magnetic-target">RAG</span>
-          <span class="skill-tag-pill magnetic-target">Vector Search</span>
-          <span class="skill-tag-pill magnetic-target">Pinecone</span>
-          <span class="skill-tag-pill magnetic-target">ChromaDB</span>
-          <span class="skill-tag-pill magnetic-target">SambaNova API</span>
-        </div>
-      </div>
-
-      <!-- 4. Frontend Skills -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-brands fa-react"></i> Frontend Engineering</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">React.js &amp; Modern Hooks</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">JavaScript (ES6+) &amp; HTML5/CSS3</span>
-              <span class="skill-pct">95%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="95%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Responsive Design &amp; UI Architecture</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">React.js</span>
-          <span class="skill-tag-pill magnetic-target">JavaScript ES6+</span>
-          <span class="skill-tag-pill magnetic-target">HTML5</span>
-          <span class="skill-tag-pill magnetic-target">CSS3</span>
-          <span class="skill-tag-pill magnetic-target">Responsive Design</span>
-          <span class="skill-tag-pill magnetic-target">React Native</span>
-        </div>
-      </div>
-
-      <!-- 5. Backend Skills -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-server"></i> Backend &amp; APIs</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Python (Flask &amp; FastAPI)</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Node.js &amp; Express.js</span>
-              <span class="skill-pct">88%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="88%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">RESTful APIs &amp; WebSockets</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">Python</span>
-          <span class="skill-tag-pill magnetic-target">Flask</span>
-          <span class="skill-tag-pill magnetic-target">FastAPI</span>
-          <span class="skill-tag-pill magnetic-target">Node.js</span>
-          <span class="skill-tag-pill magnetic-target">Express.js</span>
-          <span class="skill-tag-pill magnetic-target">REST APIs</span>
-          <span class="skill-tag-pill magnetic-target">WebSockets</span>
-        </div>
-      </div>
-
-      <!-- 6. Database Skills -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-database"></i> Databases &amp; Storage</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">MongoDB &amp; MongoDB Atlas</span>
-              <span class="skill-pct">88%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="88%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">SQL Databases &amp; Queries</span>
-              <span class="skill-pct">82%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="82%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Vector Stores (Pinecone)</span>
-              <span class="skill-pct">80%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="80%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">MongoDB</span>
-          <span class="skill-tag-pill magnetic-target">MongoDB Atlas</span>
-          <span class="skill-tag-pill magnetic-target">SQL</span>
-          <span class="skill-tag-pill magnetic-target">Pinecone</span>
-        </div>
-      </div>
-
-      <!-- 7. Tools & Ecosystem -->
-      <div class="skill-category glass-panel">
-        <h3 class="skill-category-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Ecosystem</h3>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Git, GitHub &amp; Version Control</span>
-              <span class="skill-pct">92%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Postman &amp; API Testing</span>
-              <span class="skill-pct">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Docker &amp; Deployment</span>
-              <span class="skill-pct">75%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-percentage="75%"></div>
-            </div>
-          </div>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag-pill magnetic-target">Git</span>
-          <span class="skill-tag-pill magnetic-target">GitHub</span>
-          <span class="skill-tag-pill magnetic-target">Postman</span>
-          <span class="skill-tag-pill magnetic-target">Docker</span>
-          <span class="skill-tag-pill magnetic-target">Vercel</span>
-          <span class="skill-tag-pill magnetic-target">JWT</span>
-          <span class="skill-tag-pill magnetic-target">Gearset</span>
-          <span class="skill-tag-pill magnetic-target">Figma</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Interests Panel -->
-    <div class="interests-panel glass-panel">
-      <div class="interests-title">
-        <i class="fa-solid fa-compass"></i> Engineering Interests &amp; Focus Domains
-      </div>
-      <div class="interests-tags">
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-microchip"></i> Agentic AI</span>
-        <span class="interest-pill magnetic-target"><i class="fa-brands fa-salesforce"></i> Salesforce Ecosystem</span>
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-cubes"></i> CRM Architecture</span>
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-gears"></i> Enterprise Automation</span>
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-brain"></i> AI Integration</span>
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-layer-group"></i> Full-Stack Engineering</span>
-        <span class="interest-pill magnetic-target"><i class="fa-solid fa-rocket"></i> Emerging Technologies</span>
+  <!-- About Teaser — levo-studio pattern -->
+  <section class="border-t border-white/[0.08] px-[6vw] py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <p class="text-[clamp(1rem,1.3vw,1.1rem)] text-[#8a8a86] leading-[1.55] max-w-[42ch]">
+        Curious who writes this code?
+        <span class="text-[#5a5a57]"> (a real human, not generated) —</span>
+      </p>
+      <div class="flex items-center gap-6 font-mono text-[11px] uppercase tracking-[0.14em]">
+        <a href="https://www.linkedin.com/in/harsh-rajvanshi-336a2422b/" target="_blank" rel="noopener" class="text-[#8a8a86] hover:text-[#ffb100] transition-colors inline-flex items-center gap-2">LinkedIn <span>→</span></a>
+        <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="text-[#8a8a86] hover:text-[#ffb100] transition-colors inline-flex items-center gap-2">GitHub <span>→</span></a>
+        <a href="Harsh_Rajvanshi_11-2026.pdf" download class="text-[#8a8a86] hover:text-[#ffb100] transition-colors inline-flex items-center gap-2">Resume <span>↓</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ================================================================
-       Experience Timeline & Certifications
-       ================================================================ -->
-  <section id="experience" class="scroll-animate">
-    <div class="exp-cert-grid">
-
-      <!-- Experience & Education -->
-      <div class="exp-container">
-        <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
-          <span class="section-tag">&lt;Timeline /&gt;</span>
-          <h2 class="section-title skew-target" style="display: block;">Professional Journey &amp; Education</h2>
-        </div>
-
-        <div class="timeline">
-
-          <!-- Role 1: Cloud Science Labs -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-date">2026 - Present</span>
-              <h3 class="timeline-title">Software Engineer Intern</h3>
-              <div class="timeline-company">Cloud Science Labs <span>| Noida, Uttar Pradesh</span></div>
-            </div>
-            <div class="timeline-desc">
-              <p style="margin-bottom: 0.75rem;">
-                Working on enterprise CRM solutions, Salesforce development, AI-powered automation, and custom business application development.
-              </p>
-              
-              <div class="timeline-resp-area">
-                <div class="timeline-resp-title"><i class="fa-brands fa-salesforce"></i> Salesforce Development</div>
-                <ul>
-                  <li>Developing custom Salesforce solutions using Apex, Lightning Web Components (LWC), Salesforce Flows, and platform automation.</li>
-                  <li>Building asynchronous processing solutions using Queueable Apex and Batch Apex.</li>
-                  <li>Working with custom objects, standard objects, Lightning App Builder, permission management, and CRM configurations.</li>
-                  <li>Implementing Email-to-Case, Salesforce Files, external API integrations, and automated document processing.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-resp-area">
-                <div class="timeline-resp-title"><i class="fa-solid fa-robot"></i> Agentforce &amp; AI Solutions</div>
-                <ul>
-                  <li>Developing conversational AI agents using Salesforce Agentforce for customer service and business automation.</li>
-                  <li>Building WhatsApp-based customer engagement workflows, vehicle discovery, and test-drive booking experiences.</li>
-                  <li>Working with Agentforce instructions, variables, topics, actions, and Salesforce Flow integrations.</li>
-                  <li>Developing AI-powered employee assistance and inventory management workflows.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-resp-area">
-                <div class="timeline-resp-title"><i class="fa-solid fa-file-invoice"></i> Document AI &amp; Integrations</div>
-                <ul>
-                  <li>Implementing automated invoice and credit note processing using Salesforce Case automation and Document AI integrations.</li>
-                  <li>Developing document routing and asynchronous processing for PDF and CSV files.</li>
-                  <li>Integrating external document processing services through Named Credentials and Apex callouts.</li>
-                  <li>Working on error handling, processing status management, testing, and deployment.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-resp-area">
-                <div class="timeline-resp-title"><i class="fa-solid fa-network-wired"></i> Bitrix24 CRM Engineering</div>
-                <ul>
-                  <li>Designed and implemented a comprehensive Real Estate CRM data model in Bitrix24.</li>
-                  <li>Configured custom fields, relationships, layouts, Smart Process Automations, and business pipelines.</li>
-                  <li>Developed listing and enquiry management workflows with property matching functionality.</li>
-                  <li>Built custom application functionality using JavaScript, Node.js, Express, OAuth, and Bitrix24 webhooks.</li>
-                  <li>Developed a Gemini-powered chatbot concept for automated lead generation and CRM interaction.</li>
-                  <li>Explored Bitrix24 AI and Vibe Coding capabilities for intelligent CRM assistance.</li>
-                </ul>
-              </div>
-
-              <div class="timeline-tech-tags">
-                <span class="timeline-tech-pill">Salesforce</span>
-                <span class="timeline-tech-pill">Apex</span>
-                <span class="timeline-tech-pill">LWC</span>
-                <span class="timeline-tech-pill">Agentforce</span>
-                <span class="timeline-tech-pill">Salesforce Flow</span>
-                <span class="timeline-tech-pill">Document AI</span>
-                <span class="timeline-tech-pill">Bitrix24</span>
-                <span class="timeline-tech-pill">JavaScript</span>
-                <span class="timeline-tech-pill">Node.js</span>
-                <span class="timeline-tech-pill">Express</span>
-                <span class="timeline-tech-pill">REST APIs</span>
-                <span class="timeline-tech-pill">Google Gemini</span>
-                <span class="timeline-tech-pill">Gearset</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Role 2: IT Admin -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-date">Aug 2025 - Jan 2026</span>
-              <h3 class="timeline-title">IT Admin</h3>
-              <div class="timeline-company">Saptam Decor Pvt. Ltd. <span>| Muzaffarnagar, Uttar Pradesh</span></div>
-            </div>
-            <div class="timeline-desc">
-              <p style="margin-bottom: 0.5rem;">Managed IT infrastructure and provided technical support for daily business operations.</p>
-              <ul>
-                <li>Managed company IT infrastructure, networking devices, routers, and user systems.</li>
-                <li>Handled hardware and software troubleshooting, printer configuration, and network connectivity.</li>
-                <li>Managed CCTV/NVR systems, biometric attendance devices, and IT assets.</li>
-                <li>Maintained technical documentation, asset records, and internal IT operations.</li>
-              </ul>
-              <div class="timeline-tech-tags">
-                <span class="timeline-tech-pill">Networking</span>
-                <span class="timeline-tech-pill">Windows</span>
-                <span class="timeline-tech-pill">Hardware Troubleshooting</span>
-                <span class="timeline-tech-pill">CCTV</span>
-                <span class="timeline-tech-pill">IT Infrastructure</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Role 3: Front-End Developer Intern -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-date">Jun 2024 - Dec 2024</span>
-              <h3 class="timeline-title">Front-End Developer Intern</h3>
-              <div class="timeline-company">MAKEMAYA Pvt. Ltd. <span>| Remote</span></div>
-            </div>
-            <div class="timeline-desc">
-              <ul>
-                <li>Developed responsive web interfaces using HTML, CSS, and JavaScript.</li>
-                <li>Collaborated with development teams to implement frontend requirements.</li>
-                <li>Worked on UI improvements, application debugging, and project documentation.</li>
-              </ul>
-              <div class="timeline-tech-tags">
-                <span class="timeline-tech-pill">HTML5</span>
-                <span class="timeline-tech-pill">CSS3</span>
-                <span class="timeline-tech-pill">JavaScript</span>
-                <span class="timeline-tech-pill">Frontend Development</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-header">
-              <span class="timeline-date">2021 - 2025</span>
-              <h3 class="timeline-title">B.Tech, Computer Science &amp; Engineering</h3>
-              <div class="timeline-company">IMS Engineering College <span>| Ghaziabad, Uttar Pradesh</span></div>
-            </div>
-            <div class="timeline-desc">
-              <p>Specializing in Software Architectures, Algorithms, and Artificial Intelligence configurations. Active participation in developer hackathons and coding societies.</p>
-            </div>
-          </div>
-
-        </div>
+  <footer class="border-t border-white/[0.08] px-[6vw] py-8 font-mono text-xs text-[#5a5a57]">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <span>Harsh Rajvanshi · Noida, India</span>
+      <div class="flex items-center gap-6">
+        <a href="Harsh_Rajvanshi_11-2026.pdf" download class="hover:text-[#ffb100] transition-colors">Resume</a>
+        <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="hover:text-white transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/harsh-rajvanshi-336a2422b/" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="#home" class="hover:text-[#ffb100] transition-colors">Top ↑</a>
       </div>
-
-      <!-- Certifications -->
-      <div class="certs-container">
-        <div class="section-header" style="text-align: left; margin-bottom: 2.5rem;">
-          <span class="section-tag">&lt;Badges /&gt;</span>
-          <h2 class="section-title skew-target" style="display: block;">Certifications</h2>
-        </div>
-
-        <div class="certs-panel">
-
-          <div class="cert-card glass-panel scroll-animate delay-100 magnetic-target">
-            <div class="cert-icon">
-              <i class="fa-solid fa-award"></i>
-            </div>
-            <div class="cert-details">
-              <h4>Microsoft Azure AI Training</h4>
-              <p>Issued by Honeywell Academy</p>
-              <span>Skills: Azure AI Services, ML pipelines, RAG frameworks</span>
-            </div>
-          </div>
-
-          <div class="cert-card glass-panel scroll-animate delay-200 magnetic-target">
-            <div class="cert-icon">
-              <i class="fa-solid fa-laptop-code"></i>
-            </div>
-            <div class="cert-details">
-              <h4>Full-Stack Development BootCamp</h4>
-              <p>Self-Guided Learning Accreditation</p>
-              <span>Skills: React.js hooks, Flask framework, NoSQL schemas</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================================
-       Contact Form Section
-       ================================================================ -->
-  <section id="contact" class="scroll-animate">
-    <div class="section-header">
-      <span class="section-tag">&lt;Contact /&gt;</span>
-      <h2 class="section-title skew-target">Get In Touch</h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-heading">
-          <h3 class="skew-target">Let's build something epic together.</h3>
-          <p>Whether you're looking to develop Salesforce solutions, implement Agentforce AI agents, customize Bitrix24 CRM, or discuss full-stack opportunities, my inbox is open.</p>
-        </div>
-
-        <div class="contact-details-list">
-          <!-- Location -->
-          <div class="contact-item magnetic-target">
-            <div class="contact-item-icon">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="contact-item-content">
-              <span>Location</span>
-              <a>Noida, Uttar Pradesh, India</a>
-            </div>
-          </div>
-
-          <!-- Email Contact -->
-          <div class="contact-item magnetic-target">
-            <div class="contact-item-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contact-item-content">
-              <span>Email Me</span>
-              <a href="mailto:harsh77rajvanshi@gmail.com" id="email-link">harsh77rajvanshi@gmail.com</a>
-              <button class="btn btn-secondary magnetic-target" id="copy-email-btn"
-                style="padding: 0.15rem 0.45rem; font-size: 0.7rem; margin-top: 0.25rem;">
-                <i class="fa-solid fa-copy"></i> Copy
-              </button>
-            </div>
-          </div>
-
-          <!-- Phone Contact -->
-          <div class="contact-item magnetic-target">
-            <div class="contact-item-icon">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contact-item-content">
-              <span>Call / WhatsApp</span>
-              <a href="tel:+917417785067">+91 7417785067</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="social-links">
-          <a href="https://github.com/redcoder7417" target="_blank" rel="noopener" class="social-btn magnetic-target" title="GitHub"><i
-              class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/harsh-rajvanshi-336a2422b/" target="_blank" rel="noopener" class="social-btn magnetic-target" title="LinkedIn"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:harsh77rajvanshi@gmail.com" class="social-btn magnetic-target" title="Email"><i
-              class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-
-      <!-- Contact Form Wrapper -->
-      <div class="contact-form-wrapper glass-panel">
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="dc3c4923-ae10-42f9-a08d-059a7196b40c">
-          <input type="checkbox" name="botcheck" style="display: none;">
-
-          <div class="form-group-row">
-            <div class="form-group">
-              <label for="form-name" class="form-label">Full Name</label>
-              <input type="text" id="form-name" name="name" class="form-input" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <label for="form-email" class="form-label">Email Address</label>
-              <input type="email" id="form-email" name="email" class="form-input" placeholder="name@company.com" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="form-subject" class="form-label">Subject</label>
-            <input type="text" id="form-subject" name="subject" class="form-input" placeholder="How can I help you?" required>
-          </div>
-
-          <div class="form-group" style="margin-bottom: 2rem;">
-            <label for="form-message" class="form-label">Message</label>
-            <textarea id="form-message" name="message" class="form-input" placeholder="Tell me about your project details..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary magnetic-target" style="width: 100%;">
-            Send Message <i class="fa-solid fa-paper-plane" style="font-size: 0.85rem;"></i>
-          </button>
-        </form>
-
-
-        <!-- Form Success State Overlay -->
-        <div class="form-success-overlay" id="form-success-overlay">
-          <div class="success-icon">
-            <i class="fa-solid fa-check"></i>
-          </div>
-          <h4>Message Dispatched!</h4>
-          <p>Thank you for reaching out, Harsh. Your inquiry has been received, and I'll respond within 24 hours.</p>
-          <button class="btn btn-secondary magnetic-target" id="success-reset-btn">Send Another Message</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================================
-       Footer Section
-       ================================================================ -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-text">
-        &copy; 2026 Harsh Rajvanshi. Crafted with <span>&hearts;</span> in Noida.
-      </div>
-      <button class="footer-scroll-top magnetic-target" id="scroll-to-top-btn" title="Back to top">
-        <i class="fa-solid fa-chevron-up"></i>
-      </button>
     </div>
   </footer>
 
-  <!-- Email copy feedback element -->
-  <div class="copy-toast" id="copy-toast">
-    <i class="fa-solid fa-circle-check"></i> Email copied to clipboard!
+  <div id="copy-toast" class="fixed bottom-5 right-5 z-50 translate-y-24 opacity-0 transition-all duration-300 bg-[#070708] border border-[#ffb100]/60 text-white px-4 py-2.5 rounded-full font-mono text-xs flex items-center gap-2 shadow-2xl">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#ffb100]"></span> Email copied to clipboard
   </div>
 
-  <!-- CDN Scripts for Ultra-Interactivity -->
-  <!-- 1. Lenis Smooth Scrolling -->
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-
-  <!-- 2. GSAP & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- 3. Three.js for 3D WebGL Core -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Main JavaScript Logic -->
   <script src="script.js"></script>
 </body>
-
 </html>
