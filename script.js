@@ -1090,22 +1090,37 @@ Status: Open for Software Engineering & CRM Developer roles.`,
     const successResetBtn = document.getElementById('success-reset-btn');
 
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         AudioFX.playClick();
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
 
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Dispatched logs...';
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
 
-        setTimeout(() => {
-          successOverlay.style.display = 'flex';
-          contactForm.reset();
+        try {
+          const formData = new FormData(contactForm);
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
+          });
+          const result = await response.json();
+
+          if (response.ok && result.success) {
+            successOverlay.style.display = 'flex';
+            contactForm.reset();
+            AudioFX.playChirp();
+          } else {
+            alert(result.message || 'Failed to send message. Please try again.');
+          }
+        } catch (err) {
+          alert('Network error while sending message. Please check your connection and try again.');
+        } finally {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
-          AudioFX.playChirp();
-        }, 1100);
+        }
       });
     }
 
